@@ -12,6 +12,7 @@ namespace AiComp.Controllers
     {
         private readonly IProfileService _profileService;
         private readonly IUserService _userService;
+        private readonly IIdentityService _identityService;
 
         public ProfileController(IProfileService profileService, IUserService userService)
         { 
@@ -23,7 +24,7 @@ namespace AiComp.Controllers
         [HttpPost("createprofile")]
         public async Task<IActionResult> AddProfile([FromForm] ProfileCreateModel createModel)
         {
-            var currentUser = await GetCurrentUser();
+            var currentUser = await _identityService.GetCurrentUser();
             var userProfile = await _profileService.CreateNewProfile(currentUser, createModel);
             if(userProfile.Data == null)
             {
@@ -38,14 +39,26 @@ namespace AiComp.Controllers
             {
                 status = $"{userProfile.Status}",
                 message = $"{userProfile.Message}",
-                data = userProfile.Data
+                data = new
+                {
+                    userProfile.Data.LastName,
+                    userProfile.Data.FirstName,
+                    userProfile.Data.Address,
+                    userProfile.Data.UserId,
+                    userProfile.Data.Gender,
+                    userProfile.Data.ProfilePicture,
+                    userProfile.Data.Age,
+                    userProfile.Data.ContactOfNextOfKin,
+                    userProfile.Data.FullNameOfNextOfKin,
+                    userProfile.Data.PhoneNumber
+                }
             });
         }
 
         [HttpPut("profile")]
         public async Task<IActionResult> UpdateProfile([FromBody] ProfileUpdateRequestModel model)
         {
-            var user = await GetCurrentUser();
+            var user = await _identityService.GetCurrentUser();
             var profileResponse = await _profileService.UpdateNewProfile(user, model);
             if (profileResponse.Data == null)
             {
@@ -78,9 +91,9 @@ namespace AiComp.Controllers
         [HttpPut("profilepicture")]
         public async Task<IActionResult> ChangeProfilePciture(IFormFile profilepics)
         {
-            var user = await GetCurrentUser();
+            var user = await _identityService.GetCurrentUser();
             var profilePics = await _profileService.ChangeProfilePics(user, profilepics);
-            if(profilePics.Status == "Unsuccessfull")
+            if(!profilePics.Status)
             {
                 return BadRequest(new
                 {
@@ -100,7 +113,7 @@ namespace AiComp.Controllers
         [HttpGet("profilephoto")]
         public async Task<IActionResult> GetProfilePhoto()
         {
-            var currentUser = await GetCurrentUser();
+            var currentUser = await _identityService.GetCurrentUser();
             var profilePicUrlBaseResponse = await _profileService.GetProfilePic(currentUser);
 
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "ProfilePics", profilePicUrlBaseResponse.Data!);
@@ -116,7 +129,7 @@ namespace AiComp.Controllers
         [HttpGet("p")]
         public async Task<IActionResult> GetProfile()
         {
-            var user = await GetCurrentUser();
+            var user = await _identityService.GetCurrentUser();
             var profile = await _profileService.GetProfile(user.Id);
             if(profile == null)
             {
@@ -124,7 +137,7 @@ namespace AiComp.Controllers
                 {
                     status = "Not Found",
                     Message = "Profile Not found",
-                    StatusCode = 401
+                    StatusCode = 401 
                 });
             }
 
@@ -137,18 +150,20 @@ namespace AiComp.Controllers
                     firstName = profile.Data?.FirstName,
                     lastName = profile.Data?.LastName,
                     age = profile.Data?.Age,
-                    gender = profile.Data?.Age,
+                    gender = profile.Data?.Gender,
+                    profilePics = profile.Data?.ProfilePicture,
                     address = profile.Data?.Address,
                     occupation = profile.Data?.Occupation,
                     phoneNumber = profile.Data?.PhoneNumber,
                     nokFullName = profile.Data?.FullNameOfNextOfKin,
                     nokPhoneNumber = profile.Data?.ContactOfNextOfKin,
+                    email = user.Email
                 }
             });
         }
 
-        [HttpGet("/p/{userId}")]
-        public async Task<IActionResult> GetProfile([FromBody] Guid userId)
+        [HttpGet("p/{userId}")]
+        public async Task<IActionResult> GetProfile([FromQuery] Guid userId)
         {
             var profile = await _profileService.GetProfile(userId);
             if (profile == null)
@@ -180,12 +195,7 @@ namespace AiComp.Controllers
             });
         }
 
-        private async Task<User> GetCurrentUser()
-        {
-            var currentUserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            var currentUser = await _userService.GetUserByIdAsync(currentUserId);
-            return currentUser;
-        }  
+        
 
 
     }

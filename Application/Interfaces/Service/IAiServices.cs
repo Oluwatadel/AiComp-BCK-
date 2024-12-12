@@ -1,4 +1,5 @@
-﻿using AiComp.Domain.Entities;
+﻿using AiComp.Application.DTOs.ValueObjects;
+using AiComp.Domain.Entities;
 
 namespace AiComp.Application.Interfaces.Service;
 public interface IAiServices
@@ -7,4 +8,5 @@ public interface IAiServices
     Task<string> GetResponseFromAiOnDailyMood();
     Task<string> ChatCompletionAsync(List<MoodMessage> messages);
     Task<string[]> GetAllQuestions();
+    IAsyncEnumerable<string> ChatCompletionAsync(IEnumerable<ChatConverse> chats, string prompt);
 }

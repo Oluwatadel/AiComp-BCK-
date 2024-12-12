@@ -27,11 +27,11 @@ namespace AiComp.Infrastructure.Services
             var changes = await _unitOfWork.SaveChanges();
             if (changes == 0)
             {
-                response.SetValues("Something went wrong", "Unsuccessful", null);
+                response.SetValues("Something went wrong", false, null);
                 return response;
             }
             await _moodLogRepository.AddMoodLog(moodLog);
-            response.SetValues("MoodLog added successfully", "Successful", moodLog);
+            response.SetValues("MoodLog added successfully", true, moodLog);
             return response;
         }
 
@@ -41,13 +41,13 @@ namespace AiComp.Infrastructure.Services
             var response = new BaseResponse<MoodLog>();
             if (moodLog == null)
             {
-                response.SetValues("Something went wrong", "Unsuccessful", null);
+                response.SetValues("Something went wrong", false, null);
                 return response;
             }
 
             moodLog.UpdateModeOfTheSameDay(prediction);
             await _unitOfWork.SaveChanges();
-            response.SetValues("MoodLog added successfully", "Successful", moodLog);
+            response.SetValues("MoodLog added successfully", true, moodLog);
             return response;
         }
 

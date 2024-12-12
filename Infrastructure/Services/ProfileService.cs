@@ -26,7 +26,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             if (phoneNumberExist)
             {
                 var newBaseResponse = new BaseResponse<Profile>();
-                newBaseResponse.SetValues("UnSuccessfull", "Phone Number exist", null);
+                newBaseResponse.SetValues("Phone Number exist", false, null);
                 return newBaseResponse;
             }
 
@@ -36,7 +36,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             if (model.ProfilePicture != null)
             {
                var newUpload = await _profilePicUpload.ProfilePicUpload(model.ProfilePicture);
-                if (newUpload.Data == string.Empty || newUpload.Status != "Success")
+                if (newUpload.Data == string.Empty || !newUpload.Status)
                 {
                     var newBaseResponse = new BaseResponse<Profile>();
                     newBaseResponse.SetValues(newUpload.Message, newUpload.Status, null);
@@ -54,11 +54,11 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
             if (changes > 0)
             {
-                baseResponse.SetValues("Successfull", "Profile Created successfully", profile);
+                baseResponse.SetValues("Profile Created successfully", true, profile);
                 return baseResponse;
             }
 
-            baseResponse.SetValues("UnSuccessfull", "Profile was not created!!! Data was not persisted to the dataBase", null);
+            baseResponse.SetValues("Profile was not created!!! Data was not persisted to the dataBase", false, null);
             return baseResponse;
 
         }   
@@ -72,11 +72,11 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             var baseResponse = new BaseResponse<Profile>();
             if (changes > 0)
             {
-                baseResponse.SetValues("Successfull", "Profile updated successfully", profile);
+                baseResponse.SetValues("Profile updated successfully", true, profile);
                 return baseResponse;
             }
 
-            baseResponse.SetValues("UnSuccessfull", "Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", null);
+            baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
             return baseResponse;
 
         }
@@ -101,23 +101,23 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
             if (profilePicture == null)
             {
-                response.SetValues("Profile Pics is empty", "Unsuccessfull", "");
+                response.SetValues("Profile Pics is empty", false, "");
                 return response;
             }
             var profilePic = await _profilePicUpload.ProfilePicUpload(profilePicture);
-            if (profilePic.Data == string.Empty)
+            if (!profilePic.Status)
             {
-                response.SetValues("Upload fail!!! Internal Error", "Unsuccessfull", "");
+                response = profilePic;
                 return response;
             }
             user.Profile!.UpdateProfilePicture(profilePic.Data!);
             var changes = await _unitOfWork.SaveChanges();
             if (changes == 0)
             {
-                response.SetValues("Upload fail!!! Internal Error", "Unsuccessfull", "");
+                response.SetValues("Upload fail!!! Internal Error", false, "");
                 return response;
             }
-            response = profilePic;
+            response.SetValues("Upload successful", true, "");
             return response;
         }
 
@@ -127,10 +127,10 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             var response = new BaseResponse<Profile>();
             if (userProfile == null)
             {
-                response.SetValues("Profile not found", "Unsuccessful", null);
+                response.SetValues("Profile not found", false, null);
                 return response;
             }
-            response.SetValues("Profile found", "Successful", userProfile);
+            response.SetValues("Profile found", true, userProfile);
             return response;
         }
         
@@ -140,10 +140,10 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             var response = new BaseResponse<string>();
             if (userProfile == null)
             {
-                response.SetValues("Profile pic not found", "Unsuccessful", null);
+                response.SetValues("Profile pic not found", false, null);
                 return response;
             }
-            response.SetValues("Profile pic found", "Successful", userProfile.ProfilePicture!);
+            response.SetValues("Profile pic found", true, userProfile.ProfilePicture!);
             return response;
         }
 

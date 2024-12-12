@@ -80,14 +80,10 @@ namespace AiComp.Controllers
             }
         }
 
-<<<<<<< HEAD
+
         [HttpGet("mood/Search")]
         public async Task<IActionResult> GetMoodLogsForDaysSpecifiedByUser([FromQuery] MoodSearchRequest request)
-=======
-        [HttpPost("mood/Search")]
-        public async Task<IActionResult> GetMoodLogsForDaysSpecifiedByUser([FromRoute] MoodSearchRequest request)
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
-        {
+        { 
             try
             {
                 var currentUser = await _identityService.GetCurrentUser();

@@ -11,7 +11,7 @@ namespace AiComp.Controllers
     [Route("api/chat")]
     [ApiController]
     public class ChatController : ControllerBase
-    {`
+    {
         private readonly IAiServices _aiServices;
         private readonly IUserService _userService;
         private readonly IChatConverseService _chatConverseService;
@@ -148,22 +148,6 @@ namespace AiComp.Controllers
         [HttpGet("Analyse_Mood")]
         public async Task<IActionResult> GetMoodMessagesForTodayAndAnalyseUserMood()
         {
-<<<<<<< HEAD
-
-=======
-            var currentUser = await _identityService.GetCurrentUser();
-            var message = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
-            var todaysMoodMessage = message.Where(a => a.TimeCreated.Date == DateTime.Now.Date).ToList();
-            if (message.Count == 0)
-            {
-                return BadRequest(new
-                {
-                    Status = "Not Found",
-                    message = "Your mood has not been analysed today"
-                });
-            }
-            var response = "";
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
             try
             {
                 var currentUser = await _identityService.GetCurrentUser();
@@ -223,7 +207,6 @@ namespace AiComp.Controllers
         }
 
 
-<<<<<<< HEAD
         [HttpGet("chats")]
         public async Task<IActionResult> GetCompanionConversationChats()
         {
@@ -272,33 +255,25 @@ namespace AiComp.Controllers
             }
         }
 
-        [HttpPost("chats")]
-        public async Task<IActionResult> SendChatToCompanion([FromForm] string response)
+        [HttpPost("chatstream")]
+        public async Task StreamChatCompletionAsync([FromBody] string prompt)
         {
-            try
+            var currentUser = await _identityService.GetCurrentUser();
+            var userConversation = await _conversationService.GetConversationAsync(currentUser);
+            var allUserChatWithCompanion = await _chatConverseService.GetChatConverses(userConversation.Data!.Id);
+
+            
+            Response.StatusCode = 200;
+            Response.ContentType = "text/event-stream";
+
+            await foreach(var response in _aiServices.ChatCompletionAsync(allUserChatWithCompanion.Data, prompt))
             {
-                var currentUser = await _identityService.GetCurrentUser();
-
-                var response = await _ai
-
-                var conversation = await _conversationService.GetConversationAsync(currentUser);
-
+                await Response.WriteAsync(response);
+                await Response.Body.FlushAsync();
             }
 
         }
 
-
-
-        //private async Task<User> GetCurrentUser()
-        //{
-        //    var currentUserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
-        //    var currentUser = await _userService.GetUserByIdAsync(currentUserId);
-        //    return currentUser;
-        //}
-
-=======
-        
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
         private async Task<SentimentPrediction?> ConvertJsonStringToSentimentPrediction(string aiJson)
         {
             var refinedJson = await MoodObjRegexPatternMatch(aiJson);

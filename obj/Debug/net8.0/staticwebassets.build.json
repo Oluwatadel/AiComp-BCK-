@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "1KtoogwfcljOCv34kT3zX/CNCrJjDyWJcsls1a6kvs0=",
+  "Hash": "0t0c01dI0apJj5pEAm5HM0+esP+sNeWZeiQi/TOux3Q=",
   "Source": "AiComp",
   "BasePath": "_content/AiComp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

@@ -18,7 +18,7 @@ namespace AiComp.Infrastructure.Services
             if(!validExtension.Contains(fileExtension))
             {
                 var response = new BaseResponse<string>();
-                response.SetValues($"Extension is not valid ({string.Join(',', validExtension)})", "Upload failed","");
+                response.SetValues($"Extension is not valid ({string.Join(',', validExtension)})", false,"");
                 return response;
             }
 
@@ -27,7 +27,7 @@ namespace AiComp.Infrastructure.Services
             if(size > (5 * 1024 * 1024))
             {
                 var response = new BaseResponse<string>();
-                response.SetValues($"File size is greater than 5mb", "Upload failed", "");
+                response.SetValues($"File size is greater than 5mb", false, "");
                 return response;
             }
 
@@ -49,7 +49,7 @@ namespace AiComp.Infrastructure.Services
             }
 
             var baseResponse = new BaseResponse<string>();
-            baseResponse.SetValues($"File uploaded successfully", "Success", $"{filePath}");
+            baseResponse.SetValues($"File uploaded successfully", true, $"{filePath}");
             return baseResponse;
         }
     }

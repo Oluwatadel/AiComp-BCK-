@@ -74,6 +74,38 @@
   },
   {
     "ContainingType": "AiComp.Controllers.ChatController",
+    "Method": "GetCompanionConversationChats",
+    "RelativePath": "api/chat/chats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ChatController",
+    "Method": "StreamChatCompletionAsync",
+    "RelativePath": "api/chat/chatstream",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prompt",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ChatController",
     "Method": "GetQuestionsToAnalyseMood",
     "RelativePath": "api/chat/questions",
     "HttpMethod": "POST",
@@ -105,7 +137,6 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-<<<<<<< HEAD
     "Parameters": [
       {
         "Name": "StartDate",
@@ -118,9 +149,6 @@
         "IsRequired": false
       }
     ],
-=======
-    "Parameters": [],
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
     "ReturnTypes": []
   },
   {
@@ -135,13 +163,8 @@
   },
   {
     "ContainingType": "AiComp.Controllers.MoodMessagesController",
-<<<<<<< HEAD
     "Method": "GetAllMoodMessages",
     "RelativePath": "api/MoodMessages/all",
-=======
-    "Method": "GetTodayMoodMessages",
-    "RelativePath": "api/MoodMessages",
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -149,7 +172,6 @@
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "AiComp.Controllers.MoodMessagesController",
     "Method": "DeleteMoodMessages",
     "RelativePath": "api/MoodMessages/delete/{id}",
@@ -166,8 +188,6 @@
     "ReturnTypes": []
   },
   {
-=======
->>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
     "ContainingType": "AiComp.Controllers.MoodController",
     "Method": "GetAllMoodLogs",
     "RelativePath": "api/moods/all",
@@ -260,6 +280,27 @@
   },
   {
     "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/p/p/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
     "Method": "UpdateProfile",
     "RelativePath": "api/p/profile",
     "HttpMethod": "PUT",
@@ -296,27 +337,6 @@
         "Name": "profilepics",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AiComp.Controllers.ProfileController",
-    "Method": "GetProfile",
-    "RelativePath": "p/{userId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "userId",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
