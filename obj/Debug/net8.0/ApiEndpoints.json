@@ -1,0 +1,345 @@
+[
+  {
+    "ContainingType": "AiComp.Controllers.AuthenticationController",
+    "Method": "UpdateEmail",
+    "RelativePath": "api/auth/email/update",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.AuthenticationController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/auth/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.AuthenticationController",
+    "Method": "Register",
+    "RelativePath": "api/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AiComp.Application.DTOs.RequestModel.UserRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ChatController",
+    "Method": "GetMoodMessagesForTodayAndAnalyseUserMood",
+    "RelativePath": "api/chat/Analyse_Mood",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ChatController",
+    "Method": "GetQuestionsToAnalyseMood",
+    "RelativePath": "api/chat/questions",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ChatController",
+    "Method": "ResponseToDailyMoodAnalysisQuestions",
+    "RelativePath": "api/chat/user_response",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "response",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodController",
+    "Method": "GetMoodLogsForDaysSpecifiedByUser",
+    "RelativePath": "api/mood/Search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+<<<<<<< HEAD
+    "Parameters": [
+      {
+        "Name": "StartDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "EndDate",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+=======
+    "Parameters": [],
+>>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "GetTodayMoodMessages",
+    "RelativePath": "api/MoodMessages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+<<<<<<< HEAD
+    "Method": "GetAllMoodMessages",
+    "RelativePath": "api/MoodMessages/all",
+=======
+    "Method": "GetTodayMoodMessages",
+    "RelativePath": "api/MoodMessages",
+>>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+<<<<<<< HEAD
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "DeleteMoodMessages",
+    "RelativePath": "api/MoodMessages/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+=======
+>>>>>>> f88e35d7f228b6fc26e312de2b17a365fd0c8837
+    "ContainingType": "AiComp.Controllers.MoodController",
+    "Method": "GetAllMoodLogs",
+    "RelativePath": "api/moods/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodController",
+    "Method": "GetMoodLogsForAWeek",
+    "RelativePath": "api/moods/weekly",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "AddProfile",
+    "RelativePath": "api/p/createprofile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Gender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Occupation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullNameOfNextOfKin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactOfNextOfKin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProfilePicture",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/p/p",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/p/profile",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "AiComp.Application.DTOs.RequestModel.ProfileUpdateRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "GetProfilePhoto",
+    "RelativePath": "api/p/profilephoto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "ChangeProfilePciture",
+    "RelativePath": "api/p/profilepicture",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profilepics",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "p/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[AiComp.WeatherForecast, AiComp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

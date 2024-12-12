@@ -1,0 +1,54 @@
+SentimentText,Label
+"I am feeling great today!",1
+"Everything seems to be going wrong.",0
+"Life is beautiful.",1
+"I don't know how to feel about this.",0
+"I am so happy with my progress!",1
+"I feel lost and confused.",0
+"This app is really helpful.",1
+"I don't think I can go on like this.",-1
+"I love spending time with my family.",1
+"Why does everything bad happen to me?",0
+"I have never been happier.",1
+"I'm really struggling with everything.",0
+"This is absolutely amazing!",1
+"I am so depressed.",-1
+"I'm really enjoying my work.",1
+"I can't take this anymore.",-1
+"I had a great day at work!",1
+"I don't see any point in living.",-1
+"I'm very satisfied with the service.",1
+"I want to end my life.",-1
+"The quality is poor and disappointing.",0
+"I hate this!",0
+"Fantastic job!",1
+"I am really happy with the results.",1
+"I feel like a burden to everyone.",-1
+"I'm going to hurt myself.",-1
+"I had an amazing weekend!",1
+"I'm so tired of everything.",0
+"I want to hurt someone.",-1
+"I'm worried about my future.",0
+"I don't think I can keep going.",-1
+"I'm looking forward to tomorrow.",1
+"I feel completely hopeless.",-1
+"Everything is fine.",0
+"I feel like giving up.",-1
+"This is terrible.",0
+"I'm at peace with everything.",1
+"I can't cope anymore.",-1
+"I love this app!",1
+"I'm afraid of what I might do.",-1
+"Today was a good day.",1
+"I don't want to live anymore.",-1
+"I am hopeful for the future.",1
+"Life is meaningless.",-1
+"I'm excited about the new opportunities.",1
+"I feel worthless.",-1
+"This is the worst experience I've ever had.",0
+"Life is not worth living.",-1
+"I'm content with my life.",1
+"I want to kill myself.",-1
+"I hate everyone.",0
+"I'm grateful for my friends and family.",1
+"I'm scared of my own thoughts.",-1

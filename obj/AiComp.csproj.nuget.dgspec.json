@@ -1,0 +1,136 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Ai-Mental-Companion-AiComp-\\WebApplication1\\AiComp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Ai-Mental-Companion-AiComp-\\WebApplication1\\AiComp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Ai-Mental-Companion-AiComp-\\WebApplication1\\AiComp.csproj",
+        "projectName": "AiComp",
+        "projectPath": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Ai-Mental-Companion-AiComp-\\WebApplication1\\AiComp.csproj",
+        "packagesPath": "C:\\Users\\AIRIS TECHNOVATION 2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Ai-Mental-Companion-AiComp-\\WebApplication1\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AIRIS TECHNOVATION 2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Google.Cloud.Dialogflow.V2": {
+              "target": "Package",
+              "version": "[4.21.0, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[4.10.0, )"
+            },
+            "GroqSharp": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.ML.DataView": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.Owin.Security": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "OpenAi": {
+              "target": "Package",
+              "version": "[1.11.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.7.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
