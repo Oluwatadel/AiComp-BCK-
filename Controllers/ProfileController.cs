@@ -14,10 +14,11 @@ namespace AiComp.Controllers
         private readonly IUserService _userService;
         private readonly IIdentityService _identityService;
 
-        public ProfileController(IProfileService profileService, IUserService userService)
+        public ProfileController(IProfileService profileService, IUserService userService, IIdentityService identityService)
         { 
             _profileService = profileService;
             _userService = userService;
+            _identityService = identityService;
         }
 
 

@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AiComp.Migrations
 {
     [DbContext(typeof(AiCompDBContext))]
-    [Migration("20241212200347_aicomp")]
+    [Migration("20241214180402_aicomp")]
     partial class aicomp
     {
         /// <inheritdoc />
@@ -165,6 +165,15 @@ namespace AiComp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("8bb189aa-b7c4-4395-a679-43801095eb20"),
+                            Email = "admin@aicomp.com",
+                            IsConsented = false,
+                            Password = "$2a$11$iPvi5v3WBlBrd/VB28gzLeeJ1.qzI3EWUZSfZOJCdm5kjWENtasiq"
+                        });
                 });
 
             modelBuilder.Entity("AiComp.Domain.Entities.Conversation", b =>

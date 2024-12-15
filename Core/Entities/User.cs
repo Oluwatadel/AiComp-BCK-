@@ -14,6 +14,11 @@
 
         public User(string email) { Email = email; }
 
+        public User()
+        {
+
+        }
+
         public string AddPassword(string password) => Password = BCrypt.Net.BCrypt.HashPassword(password);
 
         public void AddMoodLog(MoodLog mood)

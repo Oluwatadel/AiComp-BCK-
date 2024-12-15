@@ -18,6 +18,10 @@ namespace AiComp.Infrastructure.Persistence.Context
             modelBuilder.Entity<User>().HasOne(x => x.Profile).WithOne(p => p.User);
             modelBuilder.Entity<User>().HasMany(x => x.MoodLogs).WithOne(p => p.User).HasForeignKey(k => k.UserId);
             modelBuilder.Entity<User>().HasMany(x => x.MoodMessages).WithOne(p => p.User).HasForeignKey(p => p.UserId);
+
+            var admin = new User("admin@aicomp.com");
+            admin.AddPassword("string");
+            modelBuilder.Entity<User>().HasData(admin);
             modelBuilder.Entity<Conversation>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -34,6 +38,7 @@ namespace AiComp.Infrastructure.Persistence.Context
                 //By serializing the collections to JSON strings, it ensures a deep comparison,
                 //meaning it compares the entire structure and content of the collections, not just references or shallow properties
             });
+
         }
 
 
