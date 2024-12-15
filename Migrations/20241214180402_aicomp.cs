@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AiComp.Migrations
 {
     /// <inheritdoc />
-    public partial class @new : Migration
+    public partial class aicomp : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -114,6 +114,11 @@ namespace AiComp.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "IsConsented", "Password" },
+                values: new object[] { new Guid("8bb189aa-b7c4-4395-a679-43801095eb20"), "admin@aicomp.com", false, "$2a$11$iPvi5v3WBlBrd/VB28gzLeeJ1.qzI3EWUZSfZOJCdm5kjWENtasiq" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conversations_UserId",

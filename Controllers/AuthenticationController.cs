@@ -43,7 +43,7 @@ namespace AiComp.Controllers
         }
 
         [HttpGet("login")]
-        public async Task<IActionResult> Login([FromQuery] LoginRequestModel request)
+            public async Task<IActionResult> Login([FromQuery] LoginRequestModel request)
         {
             var userExist = await _userService.UserExist(request.Email);
             if (!userExist) return Unauthorized(new

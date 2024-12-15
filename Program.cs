@@ -39,7 +39,7 @@ internal class Program
         builder.Services.AddScoped<IChatConverseRepository, ChatConverseRepository>();
         builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
         builder.Services.AddScoped<IMoodLogRepository, MoodLogRepository>();
-        builder.Services.AddScoped<IMoodMessageRepository, MoodMessageRepository>();
+        builder.Services.AddScoped<IMoodMessageRepository, MoodMessageRepository>(); 
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IAiServices, AiServices>();

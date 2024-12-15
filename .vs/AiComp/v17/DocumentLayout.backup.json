@@ -1,41 +1,64 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\",
+  "WorkspaceRootPath": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\persistence\\context\\aicompdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\persistence\\context\\aicompdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AIRIS TECHNOVATION 2\\AppData\\Local\\SourceServer\\a6ac74f47788ab4ea39bffe043303a98c84f377bd2a7c9f35dd11d1d7a224810\\Controllers\\ProfileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\core\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:core\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\services\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\services\\profilepicupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\services\\profilepicupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\services\\profilepicupload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\services\\moodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\services\\moodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\services\\moodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\services\\aiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\infrastructure\\services\\aiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\services\\aiservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\moodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\controllers\\moodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\moodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\application\\interfaces\\service\\iaiservices.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\airis technovation 2\\documents\\aicomp new\\aicomp-bck-\\application\\interfaces\\service\\iaiservices.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:application\\interfaces\\service\\iaiservices.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -51,119 +74,184 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "IdentityService.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\IdentityService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\IdentityService.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\IdentityService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\IdentityService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAwwFAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T20:09:06.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProfileService.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\ProfileService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\ProfileService.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\ProfileService.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\ProfileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:51:56.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProfilePicUpload.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\ProfilePicUpload.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\ProfilePicUpload.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\ProfilePicUpload.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\ProfilePicUpload.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAQwC0AAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:51:08.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T18:15:39.335Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "AiCompDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:41:53.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAACoAAABAy8zMzMwuwDYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T20:09:06.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "MoodService.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\MoodService.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\MoodService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\MoodService.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\MoodService.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\MoodService.cs",
               "RelativeToolTip": "Infrastructure\\Services\\MoodService.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAqwDEAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:50:24.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T19:50:24.461Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\ProfileController.cs",
               "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAIwJ8AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAACAzczMzEwtwIUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T19:49:59.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IAiServices.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Service\\IAiServices.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\Service\\IAiServices.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Service\\IAiServices.cs",
-              "RelativeToolTip": "Application\\Interfaces\\Service\\IAiServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:37:44.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AiServices.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\AiServices.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Services\\AiServices.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\AiServices.cs",
-              "RelativeToolTip": "Infrastructure\\Services\\AiServices.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAIwG4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:37:25.112Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MoodController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\MoodController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MoodController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\MoodController.cs",
-              "RelativeToolTip": "Controllers\\MoodController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAzwFQAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:35:15.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T19:16:46.714Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\AppData\\Local\\SourceServer\\a6ac74f47788ab4ea39bffe043303a98c84f377bd2a7c9f35dd11d1d7a224810\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\SourceServer\\a6ac74f47788ab4ea39bffe043303a98c84f377bd2a7c9f35dd11d1d7a224810\\Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\AppData\\Local\\SourceServer\\a6ac74f47788ab4ea39bffe043303a98c84f377bd2a7c9f35dd11d1d7a224810\\Controllers\\ProfileController.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\SourceServer\\a6ac74f47788ab4ea39bffe043303a98c84f377bd2a7c9f35dd11d1d7a224810\\Controllers\\ProfileController.cs [Read Only]",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAcwIMAAAATAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T19:49:20.038Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProfilePicUpload.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\ProfilePicUpload.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\ProfilePicUpload.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\ProfilePicUpload.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\ProfilePicUpload.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAQwC0AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:51:08.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\ProfileService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\ProfileService.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\ProfileService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\ProfileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:51:56.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Core\\Entities\\User.cs",
+              "RelativeToolTip": "Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIA9wBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:54:56.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Core\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Core\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "Core\\Entities\\BaseEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T17:55:52.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IAiServices.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Application\\Interfaces\\Service\\IAiServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\Service\\IAiServices.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Application\\Interfaces\\Service\\IAiServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\Service\\IAiServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:37:44.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AiServices.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\AiServices.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\AiServices.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Infrastructure\\Services\\AiServices.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\AiServices.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAIwG4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:37:25.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MoodController.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\MoodController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MoodController.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\MoodController.cs",
+              "RelativeToolTip": "Controllers\\MoodController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAzwFQAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:35:15.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\AIRIS TECHNOVATION 2\\Documents\\Aicomp New\\AiComp-BCK-\\Controllers\\ChatController.cs",
               "RelativeToolTip": "Controllers\\ChatController.cs",
               "ViewState": "AgIAAM8AAAAAAAAAAAAcwAIBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:33:28.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T19:33:28.11Z"
             }
           ]
         }

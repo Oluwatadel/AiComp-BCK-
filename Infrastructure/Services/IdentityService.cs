@@ -34,20 +34,19 @@ namespace AiComp.Infrastructure.Services
 
         public async Task<string> GenerateToken(User user)
         {
-            var security = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]));
+            var security = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credential = new SigningCredentials(security, SecurityAlgorithms.HmacSha256);
-
-            Profile profile = await _profileRepository.GetProfileAsync(user.Id);
-            var claims = new List<Claim>();
-            if (profile == null)
+            var profile = await _profileRepository.GetProfileAsync(user.Id);
+            var claims = new List<Claim>()
             {
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
-                claims.Add(new Claim(ClaimTypes.Email, user.Email));
-            }
-            else
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
+
+            
+            if(profile != null)
             {
                 claims.Add(new Claim(ClaimTypes.Name, $"{profile.LastName} {profile.FirstName}"));
-                claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
                 claims.Add(new Claim(ClaimTypes.Email, user.Email));
                 claims.Add(new Claim(ClaimTypes.Gender, profile.Gender));
             }
@@ -71,9 +70,19 @@ namespace AiComp.Infrastructure.Services
 
         public async Task<User> GetCurrentUser()
         {
-            var currentUserId = Guid.Parse(_httpContextAccessor.HttpContext?.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-            var currentUser = await _userRepository.GetUser(a => a.Id == currentUserId);
-            return currentUser;
+            if (_httpContextAccessor.HttpContext?.User == null)
+            {
+                return null;
+            }
+
+            var userIdClaim = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var currentUserId))
+            {
+                return null;
+            }
+
+            return await _userRepository.GetUser(a => a.Id == currentUserId);
         }
     }
 }
