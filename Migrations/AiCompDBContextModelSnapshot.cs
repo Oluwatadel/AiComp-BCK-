@@ -106,11 +106,11 @@ namespace AiComp.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("text");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer");
-
                     b.Property<string>("ContactOfNextOfKin")
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("text");
@@ -166,10 +166,10 @@ namespace AiComp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8bb189aa-b7c4-4395-a679-43801095eb20"),
+                            Id = new Guid("92b0fba4-ec65-46ba-a8d5-414c84f20800"),
                             Email = "admin@aicomp.com",
                             IsConsented = false,
-                            Password = "$2a$11$iPvi5v3WBlBrd/VB28gzLeeJ1.qzI3EWUZSfZOJCdm5kjWENtasiq"
+                            Password = "$2a$11$CVgYknRQRg9Jj1it1wP9puUC9u38go42l9TxSHIyn1TqBQGa6OOrS"
                         });
                 });
 

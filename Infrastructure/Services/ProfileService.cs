@@ -22,52 +22,76 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
         public async Task<BaseResponse<Profile>> CreateNewProfile(User user, ProfileCreateModel model)
         {
-            var phoneNumberExist = await CheckPhoneNumberAsync(user, model.PhoneNumber!);
-            if (phoneNumberExist)
-            {
-                var newBaseResponse = new BaseResponse<Profile>();
-                newBaseResponse.SetValues("Phone Number exist", false, null);
-                return newBaseResponse;
-            }
+            var response = new BaseResponse<Profile>();
 
-            //profile pics
-            var upload = new BaseResponse<string>();
-
-            if (model.ProfilePicture != null)
+            try
             {
-               var newUpload = await _profilePicUpload.ProfilePicUpload(model.ProfilePicture);
-                if (newUpload.Data == string.Empty || !newUpload.Status)
+                // Check if phone number exists
+                if (await CheckPhoneNumberAsync(user, model.PhoneNumber!))
                 {
-                    var newBaseResponse = new BaseResponse<Profile>();
-                    newBaseResponse.SetValues(newUpload.Message, newUpload.Status, null);
-                    return newBaseResponse;
+                    response.SetValues("Phone Number exists", false, null);
+                    return response;
                 }
-                upload = newUpload;
-            }
-            int age = CalculateAge(model.Age);
-            var profile = new Profile(model.FirstName, model.LastName, age, model.Gender, model.Occupation, model.Address, model.PhoneNumber, model.ContactOfNextOfKin, model.FullNameOfNextOfKin, upload.Data);
-            profile.SetUserObject(user);
-            await _profileRepository.AddProfileAsync(profile);
-            
-            var changes = await _unitOfWork.SaveChanges();
-            var baseResponse = new BaseResponse<Profile>();
 
-            if (changes > 0)
+                // Upload profile picture if provided
+                string? profilePicUrl = null;
+                if (model.ProfilePicture != null)
+                {
+                    var uploadResult = await _profilePicUpload.ProfilePicUpload(model.ProfilePicture);
+                    if (!uploadResult.Status)
+                    {
+                        response.SetValues("Profile picture upload failed", false, null);
+                        return response;
+                    }
+                    profilePicUrl = uploadResult.Data;
+                }
+
+                var unspecifiedDateTime = DateTime.Parse(model.Age.ToString());
+                var utcDateTime = DateTime.SpecifyKind(unspecifiedDateTime, DateTimeKind.Utc);
+
+                // Create and populate the profile
+                var newProfile = new Profile(
+                    model.FirstName,
+                    model.LastName,
+                    model.Gender,
+                    model.Occupation,
+                    model.Address,
+                    model.PhoneNumber,
+                    model.ContactOfNextOfKin,
+                    model.FullNameOfNextOfKin,
+                    profilePicUrl
+                );
+
+                newProfile.UpdateAge(utcDateTime);
+                newProfile.SetUserObject(user);
+                user.Profile = newProfile;
+
+                // Persist the profile
+                await _profileRepository.AddProfileAsync(newProfile);
+                var changesSaved = await _unitOfWork.SaveChanges();
+
+                if (changesSaved > 0)
+                {
+                    response.SetValues("Profile created successfully", true, newProfile);
+                    return response;
+                }
+
+                response.SetValues("Profile was not created! Data was not persisted to the database", false, null);
+                return response;
+            }
+            catch (Exception ex)
             {
-                baseResponse.SetValues("Profile Created successfully", true, profile);
-                return baseResponse;
+                // Log the exception for debugging
+                Console.WriteLine($"Error creating profile: {ex.Message}");
+                response.SetValues("An error occurred while creating the profile", false, null);
+                return response;
             }
-
-            baseResponse.SetValues("Profile was not created!!! Data was not persisted to the dataBase", false, null);
-            return baseResponse;
-
         }   
 
         public async Task<BaseResponse<Profile>> UpdateNewProfile(User user, ProfileUpdateRequestModel model)
         {
             var profile = await _profileRepository.GetProfileAsync(user.Id);
-            profile.UpdateProfile(model);
-
+            var returnedProfile = _profileRepository.UpdateProfileAsync(profile);
             var changes = await _unitOfWork.SaveChanges();
             var baseResponse = new BaseResponse<Profile>();
             if (changes > 0)
@@ -79,15 +103,6 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
             return baseResponse;
 
-        }
-
-        private async Task<bool> CheckPhoneNumberAsync(User user, string phoneNumber)
-        {
-            if (user.Profile == null)
-            {
-                return false;
-            }
-            return await Task.FromResult(user.Profile.PhoneNumber == phoneNumber ? true : false);
         }
 
         public async Task<bool> CheckProfileExist(User user)
@@ -147,18 +162,31 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             return response;
         }
 
-        private  int CalculateAge(DateTime dateOfBirth)
+        private async Task<bool> CheckPhoneNumberAsync(User user, string phoneNumber)
         {
-            DateTime today = DateTime.Now;
-            int age = today.Year - dateOfBirth.Year;
-
-            // Check if the birthday has already occurred this year
-            if (today < dateOfBirth.AddYears(age))
+            if (user.Profile == null)
             {
-                age--; // If the birthday hasn't occurred yet, subtract one year
+                return false;
             }
-
-            return age;
+            return await Task.FromResult(user.Profile.PhoneNumber == phoneNumber ? true : false);
         }
+
+        //private  int CalculateAge(DateTime dateOfBirth)
+        //{
+        //    DateTime today = DateTime.Now;
+        //    int age = today.Year - dateOfBirth.Year;
+
+        //    // Check if the birthday has already occurred this year
+        //    if (today < dateOfBirth.AddYears(age))
+        //    {
+        //        age--; // If the birthday hasn't occurred yet, subtract one year
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }    
+
+        //    return age;
+        //}
     }
 }

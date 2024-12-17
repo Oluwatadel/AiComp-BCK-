@@ -37,28 +37,29 @@
       }
     },
     "/api/auth/login": {
-      "get": {
+      "post": {
         "tags": [
           "Authentication"
         ],
-        "parameters": [
-          {
-            "name": "Email",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Password",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequestModel"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -402,19 +403,68 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/ProfileUpdateRequestModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUpdateRequestModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUpdateRequestModel"
+                "type": "object",
+                "properties": {
+                  "FirstName": {
+                    "type": "string"
+                  },
+                  "LastName": {
+                    "type": "string"
+                  },
+                  "Gender": {
+                    "type": "string"
+                  },
+                  "Occupation": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  },
+                  "PhoneNumber": {
+                    "type": "string"
+                  },
+                  "FullNameOfNextOfKin": {
+                    "type": "string"
+                  },
+                  "ContactOfNextOfKin": {
+                    "type": "string"
+                  },
+                  "ProfilePicture": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "FirstName": {
+                  "style": "form"
+                },
+                "LastName": {
+                  "style": "form"
+                },
+                "Gender": {
+                  "style": "form"
+                },
+                "Occupation": {
+                  "style": "form"
+                },
+                "Address": {
+                  "style": "form"
+                },
+                "PhoneNumber": {
+                  "style": "form"
+                },
+                "FullNameOfNextOfKin": {
+                  "style": "form"
+                },
+                "ContactOfNextOfKin": {
+                  "style": "form"
+                },
+                "ProfilePicture": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -554,46 +604,19 @@
   },
   "components": {
     "schemas": {
-      "ProfileUpdateRequestModel": {
+      "LoginRequestModel": {
+        "required": [
+          "email",
+          "password"
+        ],
         "type": "object",
         "properties": {
-          "firstName": {
+          "email": {
             "type": "string",
             "nullable": true
           },
-          "lastName": {
+          "password": {
             "type": "string",
-            "nullable": true
-          },
-          "gender": {
-            "type": "string",
-            "nullable": true
-          },
-          "occupation": {
-            "type": "string",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "fullNameOfNextOfKin": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "contactOfNextOfKin": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "profilePicture": {
-            "type": "string",
-            "format": "binary",
             "nullable": true
           }
         },

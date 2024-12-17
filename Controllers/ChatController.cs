@@ -1,6 +1,7 @@
 ﻿using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
 using GroqSharp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -10,6 +11,7 @@ namespace AiComp.Controllers
 {
     [Route("api/chat")]
     [ApiController]
+    [Authorize]
     public class ChatController : ControllerBase
     {
         private readonly IAiServices _aiServices;

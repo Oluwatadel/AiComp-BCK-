@@ -1,4 +1,5 @@
 ﻿using AiComp.Application.Interfaces.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Principal;
@@ -7,6 +8,8 @@ namespace AiComp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class MoodMessagesController : ControllerBase
     {
         private readonly IIdentityService _identityservice;
