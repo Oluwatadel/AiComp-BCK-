@@ -1,6 +1,7 @@
 ﻿using AiComp.Application.DTOs.RequestModel;
 using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AiComp.Controllers
@@ -42,20 +43,15 @@ namespace AiComp.Controllers
             });
         }
 
-        [HttpGet("login")]
-            public async Task<IActionResult> Login([FromQuery] LoginRequestModel request)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestModel request)
         {
             var userExist = await _userService.UserExist(request.Email);
-            if (!userExist) return Unauthorized(new
-            {
-                status = "Not Found",
-                message = "User does not exist",
-                statusCode = 401
-            });
+            if (!userExist) return StatusCode(401);
             var passWordCheck = await _identityService.AuthenticateUser(request.Email, request.Password);
             if(!passWordCheck)
             {
-                return Unauthorized();
+                return StatusCode(401);
             }
 
             var user = await _userService.GetUserAsync(request.Email);
@@ -107,6 +103,7 @@ namespace AiComp.Controllers
             });
         }
 
+        [Authorize]
         [HttpPatch("email/update")]
         public async Task<IActionResult> UpdateEmail([FromBody] string email)
         {
@@ -151,6 +148,7 @@ namespace AiComp.Controllers
             
         }
 
+        [Authorize]
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllUsers()
         {

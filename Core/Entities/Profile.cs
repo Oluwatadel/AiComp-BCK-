@@ -7,22 +7,21 @@ namespace AiComp.Domain.Entities
     {
         public string? FirstName { get; private set; }
         public string? LastName { get; private set; }
-        public int Age { get; private set; }
+        public DateTime DateOfBirth { get; private set; }
         public string? Gender { get; private set; }
         public string? Occupation { get; private set; }
         public string? PhoneNumber { get; private set; }
         public string? Address { get; private set; }
         public string? FullNameOfNextOfKin { get; private set; }
         public string? ContactOfNextOfKin { get; private set; }
-        public string? ProfilePicture { get; private set; }
+        public string? ProfilePicture { get; set; }
         public Guid UserId { get; private set; }
-        public User User { get; private set; }
+        public User User { get; private set; } = default!;
 
-        public Profile(string firstName, string lastName, int age, string gender, string occupation, string address, string phoneNumber, string contactOfNextOfKin, string fullNameOfNextOfKin, string profilePicture)
+        public Profile(string firstName, string lastName, string gender, string occupation, string address, string phoneNumber, string contactOfNextOfKin, string fullNameOfNextOfKin, string profilePicture)
         {
             FirstName = firstName;
             LastName = lastName;
-            Age = age;
             Gender = gender;
             Occupation = occupation;
             Address = address;
@@ -52,12 +51,12 @@ namespace AiComp.Domain.Entities
 
         public void UpdateProfilePicture(string request)
         {
-            ProfilePicture = request;
+            ProfilePicture = request ?? ProfilePicture;
         }
 
-        public void UpdateAge(int age)
+        public void UpdateAge(DateTime dob)
         {
-            Age = age;
+            DateOfBirth = dob;
         }
     }
 }

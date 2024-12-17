@@ -29,19 +29,14 @@
     "ContainingType": "AiComp.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "AiComp.Application.DTOs.RequestModel.LoginRequestModel",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -308,9 +303,49 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "AiComp.Application.DTOs.RequestModel.ProfileUpdateRequestModel",
-        "IsRequired": true
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Gender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Occupation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FullNameOfNextOfKin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContactOfNextOfKin",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ProfilePicture",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

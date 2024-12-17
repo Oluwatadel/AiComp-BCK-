@@ -47,8 +47,6 @@ namespace AiComp.Infrastructure.Services
             if(profile != null)
             {
                 claims.Add(new Claim(ClaimTypes.Name, $"{profile.LastName} {profile.FirstName}"));
-                claims.Add(new Claim(ClaimTypes.Email, user.Email));
-                claims.Add(new Claim(ClaimTypes.Gender, profile.Gender));
             }
 
             //Generate Token

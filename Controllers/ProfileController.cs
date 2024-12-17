@@ -1,6 +1,7 @@
 ﻿using AiComp.Application.DTOs.RequestModel;
 using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -48,7 +49,7 @@ namespace AiComp.Controllers
                     userProfile.Data.UserId,
                     userProfile.Data.Gender,
                     userProfile.Data.ProfilePicture,
-                    userProfile.Data.Age,
+                    userProfile.Data.DateOfBirth,
                     userProfile.Data.ContactOfNextOfKin,
                     userProfile.Data.FullNameOfNextOfKin,
                     userProfile.Data.PhoneNumber
@@ -57,7 +58,7 @@ namespace AiComp.Controllers
         }
 
         [HttpPut("profile")]
-        public async Task<IActionResult> UpdateProfile([FromBody] ProfileUpdateRequestModel model)
+        public async Task<IActionResult> UpdateProfile([FromForm] ProfileUpdateRequestModel model)
         {
             var user = await _identityService.GetCurrentUser();
             var profileResponse = await _profileService.UpdateNewProfile(user, model);
@@ -127,6 +128,7 @@ namespace AiComp.Controllers
             return File(fileBytes, $"image/{fileExtension[1]}");
         }
 
+        [Authorize]
         [HttpGet("p")]
         public async Task<IActionResult> GetProfile()
         {
@@ -150,7 +152,7 @@ namespace AiComp.Controllers
                 {
                     firstName = profile.Data?.FirstName,
                     lastName = profile.Data?.LastName,
-                    age = profile.Data?.Age,
+                    age = profile.Data?.DateOfBirth,
                     gender = profile.Data?.Gender,
                     profilePics = profile.Data?.ProfilePicture,
                     address = profile.Data?.Address,
@@ -185,8 +187,8 @@ namespace AiComp.Controllers
                 {
                     firstName = profile.Data?.FirstName,
                     lastName = profile.Data?.LastName,
-                    age = profile.Data?.Age,
-                    gender = profile.Data?.Age,
+                    age = profile.Data?.DateOfBirth,
+                    gender = profile.Data?.Gender,
                     address = profile.Data?.Address,
                     occupation = profile.Data?.Occupation,
                     phoneNumber = profile.Data?.PhoneNumber,

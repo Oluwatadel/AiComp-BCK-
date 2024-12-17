@@ -1,5 +1,6 @@
 ﻿using AiComp.Application.DTOs.RequestModel;
 using AiComp.Application.Interfaces.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OpenAI_API.Embedding;
@@ -8,6 +9,8 @@ namespace AiComp.Controllers
 {
     [Route("api/")]
     [ApiController]
+    [Authorize]
+
     public class MoodController : ControllerBase
     {
         private readonly IMoodService _moodService;

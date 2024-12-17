@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AiComp.Migrations
 {
     /// <inheritdoc />
-    public partial class aicomp : Migration
+    public partial class newAicomp : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,7 +94,7 @@ namespace AiComp.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     FirstName = table.Column<string>(type: "text", nullable: true),
                     LastName = table.Column<string>(type: "text", nullable: true),
-                    Age = table.Column<int>(type: "integer", nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Gender = table.Column<string>(type: "text", nullable: true),
                     Occupation = table.Column<string>(type: "text", nullable: true),
                     PhoneNumber = table.Column<string>(type: "text", nullable: true),
@@ -118,7 +118,7 @@ namespace AiComp.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Email", "IsConsented", "Password" },
-                values: new object[] { new Guid("8bb189aa-b7c4-4395-a679-43801095eb20"), "admin@aicomp.com", false, "$2a$11$iPvi5v3WBlBrd/VB28gzLeeJ1.qzI3EWUZSfZOJCdm5kjWENtasiq" });
+                values: new object[] { new Guid("92b0fba4-ec65-46ba-a8d5-414c84f20800"), "admin@aicomp.com", false, "$2a$11$CVgYknRQRg9Jj1it1wP9puUC9u38go42l9TxSHIyn1TqBQGa6OOrS" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conversations_UserId",

@@ -11,6 +11,5 @@
         public string? FullNameOfNextOfKin { get; private set; }
         public string? ContactOfNextOfKin { get; private set; }
         public IFormFile? ProfilePicture { get; set; }
-
     }
 }

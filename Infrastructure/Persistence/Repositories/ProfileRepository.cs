@@ -29,8 +29,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
         public async Task<Profile> UpdateProfileAsync(Profile profile)
         {
             _dbContext.Profiles.Update(profile);
-            await Task.CompletedTask;
-            return profile;
+            return await Task.FromResult(profile);
         }
     }
 }
