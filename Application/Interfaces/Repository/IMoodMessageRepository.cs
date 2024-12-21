@@ -8,5 +8,6 @@ namespace AiComp.Application.Interfaces.Repository
 
         public Task<List<MoodMessage>> GetMoodMessages(Guid userId);
         public void Delete(MoodMessage message);
+        public Task<MoodMessage> GetMoodMessage(Guid moodMessageId);
     }
 }

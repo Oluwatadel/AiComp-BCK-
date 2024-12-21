@@ -59,8 +59,8 @@
   },
   {
     "ContainingType": "AiComp.Controllers.ChatController",
-    "Method": "GetMoodMessagesForTodayAndAnalyseUserMood",
-    "RelativePath": "api/chat/Analyse_Mood",
+    "Method": "AnalyseUserMood",
+    "RelativePath": "api/chat/analysemood",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -103,7 +103,7 @@
     "ContainingType": "AiComp.Controllers.ChatController",
     "Method": "GetQuestionsToAnalyseMood",
     "RelativePath": "api/chat/questions",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -112,7 +112,7 @@
   {
     "ContainingType": "AiComp.Controllers.ChatController",
     "Method": "ResponseToDailyMoodAnalysisQuestions",
-    "RelativePath": "api/chat/user_response",
+    "RelativePath": "api/chat/userresponse",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -123,6 +123,52 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "GetAllMoodMessages",
+    "RelativePath": "api/message/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "DeleteAllMoodMessages",
+    "RelativePath": "api/message/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "DeleteMoodMessage",
+    "RelativePath": "api/message/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodMessagesController",
+    "Method": "GetTodayMoodMessages",
+    "RelativePath": "api/message/moodmessages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -142,42 +188,6 @@
         "Name": "EndDate",
         "Type": "System.DateTime",
         "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AiComp.Controllers.MoodMessagesController",
-    "Method": "GetTodayMoodMessages",
-    "RelativePath": "api/MoodMessages",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AiComp.Controllers.MoodMessagesController",
-    "Method": "GetAllMoodMessages",
-    "RelativePath": "api/MoodMessages/all",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AiComp.Controllers.MoodMessagesController",
-    "Method": "DeleteMoodMessages",
-    "RelativePath": "api/MoodMessages/delete/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []

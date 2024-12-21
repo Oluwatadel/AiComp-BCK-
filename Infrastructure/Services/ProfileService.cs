@@ -90,18 +90,36 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
         public async Task<BaseResponse<Profile>> UpdateNewProfile(User user, ProfileUpdateRequestModel model)
         {
-            var profile = await _profileRepository.GetProfileAsync(user.Id);
-            var returnedProfile = _profileRepository.UpdateProfileAsync(profile);
-            var changes = await _unitOfWork.SaveChanges();
-            var baseResponse = new BaseResponse<Profile>();
-            if (changes > 0)
+            try
             {
-                baseResponse.SetValues("Profile updated successfully", true, profile);
+                var profile = await _profileRepository.GetProfileAsync(user.Id);
+                var response = new BaseResponse<Profile>();
+                var uploadResult = await _profilePicUpload.ProfilePicUpload(model.ProfilePicture);
+                if (!uploadResult.Status)
+                {
+                    response.SetValues("Profile picture upload failed", false, null);
+                    return response;
+                }
+                profile.UpdateProfilePicture(uploadResult.Data);
+                profile.UpdateProfile(model);
+                var returnedProfile = _profileRepository.UpdateProfileAsync(profile);
+                var changes = await _unitOfWork.SaveChanges();
+                var baseResponse = new BaseResponse<Profile>();
+                if (changes > 0)
+                {
+                    baseResponse.SetValues("Profile updated successfully", true, profile);
+                    return baseResponse;
+                }
+
+                baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
                 return baseResponse;
             }
-
-            baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
-            return baseResponse;
+            catch(Exception ex)
+            {
+                var newBaseResponse = new BaseResponse<Profile>();
+                newBaseResponse.SetValues(ex.Message, false, null);
+                return newBaseResponse;
+            }
 
         }
 

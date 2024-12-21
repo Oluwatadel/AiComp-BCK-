@@ -26,6 +26,12 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             return await Task.FromResult(moodMessages.ToList());
         }
 
+        public async Task<MoodMessage> GetMoodMessage(Guid moodMessageId)
+        {
+            var moodMessage = await _dbContext.MoodMesages.FirstOrDefaultAsync(m => m.Id == moodMessageId);
+            return moodMessage;
+        }
+
         public void Delete(MoodMessage message)
         {
             _dbContext.MoodMesages.Remove(message);

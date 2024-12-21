@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AiComp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88b5415f950440d7515c483f97d7833ef0993173")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36ab812aeed394d809849c33526dcb9a7cbc21e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("AiComp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AiComp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

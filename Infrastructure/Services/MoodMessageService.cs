@@ -32,7 +32,7 @@ namespace AiComp.Infrastructure.Services
             return messages;
         }
 
-        public async Task<int> DeleteAllMoodMessages(Guid userId)
+        public async Task<int> DeleteAllMoodMessagesAsync(Guid userId)
         {
 
             var moodMessages = await _repository.GetMoodMessages(userId);
@@ -42,6 +42,14 @@ namespace AiComp.Infrastructure.Services
             }
             var changes = await _unitOfWork.SaveChanges();
             return changes;
+        }
+
+        public async Task<int> DeleteMoodMessageAsync(Guid moodMessageId)
+        {
+            var moodMessage = await _repository.GetMoodMessage(moodMessageId);
+            _repository.Delete(moodMessage);
+            var changes = await _unitOfWork.SaveChanges();
+            return await Task.FromResult(changes);
         }
 
     }

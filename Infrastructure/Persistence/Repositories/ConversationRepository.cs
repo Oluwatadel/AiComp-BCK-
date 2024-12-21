@@ -22,7 +22,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
         public async Task<Conversation> GetConversationAync(Guid userId)
         {
-            var conversation = await _dbContext.Conversations.Include(a => a.Conversations).FirstOrDefaultAsync(a => a.UserId == userId);
+            var conversation = await _dbContext.Conversations.FirstOrDefaultAsync(a => a.UserId == userId);
             return conversation;
         }
     }

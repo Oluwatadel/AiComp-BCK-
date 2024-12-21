@@ -6,7 +6,7 @@ using System.Security.Principal;
 
 namespace AiComp.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/message")]
     [ApiController]
     [Authorize]
 
@@ -21,10 +21,11 @@ namespace AiComp.Controllers
             _moodmessageservice = moodmessageservice;
         }
 
-        [HttpDelete("delete/{id}")]
-        public async Task<IActionResult> DeleteMoodMessages([FromRoute] Guid id)
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteAllMoodMessages()
         {
-            var changes = await _moodmessageservice.DeleteAllMoodMessages(id);
+            var currentUser = await _identityservice.GetCurrentUser();
+            var changes = await _moodmessageservice.DeleteAllMoodMessagesAsync(currentUser.Id);
             if (changes == 0)
             {
                 return NoContent();
@@ -34,6 +35,25 @@ namespace AiComp.Controllers
             {
                 status = "Successfull!!",
                 message = "Delete successful"
+            });
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> DeleteMoodMessage([FromRoute] Guid id)
+        {
+            var changes = await _moodmessageservice.DeleteMoodMessageAsync(id);
+            if(changes == 0)
+            {
+                return BadRequest(new
+                {
+                    status = "Unsuccessfull",
+                    message = "Delete was not successful"
+                });
+            }
+            return Ok(new
+            {
+                status = "Successful",
+                message = "Mood message successfully deleted"
             });
         }
 
@@ -65,7 +85,7 @@ namespace AiComp.Controllers
             });
         }
 
-        [HttpGet]
+        [HttpGet("moodmessages")]
         public async Task<IActionResult> GetTodayMoodMessages()
         {
             var currentUser = await _identityservice.GetCurrentUser();
@@ -83,13 +103,13 @@ namespace AiComp.Controllers
             {
                 status = "Successful",
                 message = $"{messages.Count} messages found",
-                data = messages.Where(a => a.TimeCreated == DateTime.UtcNow).Select(p => new
+                data = messages.Where(a => a.TimeCreated.Date == DateTime.UtcNow.Date).OrderBy(a => a.TimeCreated).Select(p => new
                 {
                     Id = p.Id,
                     date = p.TimeCreated,
                     role = p.Role,
                     messageContent = p.Content,
-                })
+                }).ToList()
             });
         }
 

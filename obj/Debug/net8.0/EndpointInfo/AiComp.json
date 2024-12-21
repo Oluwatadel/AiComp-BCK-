@@ -111,7 +111,7 @@
       }
     },
     "/api/chat/questions": {
-      "post": {
+      "get": {
         "tags": [
           "Chat"
         ],
@@ -122,7 +122,7 @@
         }
       }
     },
-    "/api/chat/user_response": {
+    "/api/chat/userresponse": {
       "post": {
         "tags": [
           "Chat"
@@ -153,7 +153,7 @@
         }
       }
     },
-    "/api/chat/Analyse_Mood": {
+    "/api/chat/analysemood": {
       "get": {
         "tags": [
           "Chat"
@@ -262,7 +262,19 @@
         }
       }
     },
-    "/api/MoodMessages/delete/{id}": {
+    "/api/message/delete": {
+      "delete": {
+        "tags": [
+          "MoodMessages"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/message/delete/{id}": {
       "delete": {
         "tags": [
           "MoodMessages"
@@ -285,7 +297,7 @@
         }
       }
     },
-    "/api/MoodMessages/all": {
+    "/api/message/all": {
       "get": {
         "tags": [
           "MoodMessages"
@@ -297,7 +309,7 @@
         }
       }
     },
-    "/api/MoodMessages": {
+    "/api/message/moodmessages": {
       "get": {
         "tags": [
           "MoodMessages"

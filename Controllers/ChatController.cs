@@ -38,7 +38,7 @@ namespace AiComp.Controllers
             _moodService = moodService;
         }
 
-        [HttpPost("questions")]
+        [HttpGet("questions")]
         public async Task<IActionResult> GetQuestionsToAnalyseMood()
         {
             var currentUser = await _identityService.GetCurrentUser();
@@ -54,7 +54,7 @@ namespace AiComp.Controllers
                 if (todaysMoodMessage.Count < 9 && todaysMoodMessage?.LastOrDefault()?.Role == MessageRoleType.System)
                     return Ok(new
                     {
-                        message = $"There is no response to {moodMessages.LastOrDefault()}",
+                        message = $"There is no response to {moodMessages.LastOrDefault().Content}",
                         status = "Error",
                         data = moodMessages?.LastOrDefault()?.Content
                     });
@@ -91,7 +91,16 @@ namespace AiComp.Controllers
                     });
                 }
 
-                return Ok(new { Question = nextQuestion });
+                return Ok(new
+                {
+                    message = "question found",
+                    status = true,
+                    data = new
+                    {
+                        question = nextQuestion,
+                        timestamp = DateTime.UtcNow
+                    }
+                });
 
             }
 
@@ -114,13 +123,28 @@ namespace AiComp.Controllers
                 });
             }
 
-            return Ok(new { Question = nextQuestion });
+            return Ok(new
+            {
+                message = "question found",
+                status = true,
+                data = nextQuestion
+            });
         }
 
-        [HttpPost("user_response")]
+        [HttpPost("userresponse")]
         public async Task<IActionResult> ResponseToDailyMoodAnalysisQuestions([FromBody] string response)
         {
             var currentUser = await _identityService.GetCurrentUser();
+            var moodMessages = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
+            var todaysMoodMessage = moodMessages.Where(message => message.TimeCreated.Date == DateTime.UtcNow.Date).ToList();
+            if(todaysMoodMessage.Count() >= 8 && todaysMoodMessage[todaysMoodMessage.Count() -1].Role != MessageRoleType.System)
+            {
+                return Ok(new
+                {
+                    message = "Today's mood has been analysed! Come back tomorrow tomorrow",
+                    status =  "Unsuccessful",
+                });
+            }
             var moodMessage = new MoodMessage
             {
                 Content = response,
@@ -147,8 +171,8 @@ namespace AiComp.Controllers
             });
         }
 
-        [HttpGet("Analyse_Mood")]
-        public async Task<IActionResult> GetMoodMessagesForTodayAndAnalyseUserMood()
+        [HttpGet("analysemood")]
+        public async Task<IActionResult> AnalyseUserMood()
         {
             try
             {
@@ -216,7 +240,7 @@ namespace AiComp.Controllers
             {
                 var currentUser = await _identityService.GetCurrentUser();
                 var conversation = await _conversationService.GetConversationAsync(currentUser);
-                if(conversation == null)
+                if(conversation.Data == null)
                 {
                     var newConversation = await _conversationService.AddConversation(currentUser, new Conversation(currentUser.Id));
                     if(newConversation.Data == null)
