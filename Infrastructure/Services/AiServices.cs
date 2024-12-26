@@ -68,6 +68,17 @@ namespace AiComp.Infrastructure.Services
             var response = await _groq.CreateChatCompletionAsync(messageArray.ToArray());
             return response;
         }
+        
+        public async Task<string> ChatCompletionAsync(string message)
+        {
+            var messageArray = new List<Message>
+            {
+                new Message { Content = "You are a psychologist, interpret the given json result of mood analysis in the next message in one sentence", Role = MessageRoleType.System },
+                new Message { Content = message, Role = MessageRoleType.User }
+            };
+            var response = await _groq.CreateChatCompletionAsync(messageArray.ToArray());
+            return response;
+        }
 
         public async IAsyncEnumerable<string> ChatCompletionAsync(IEnumerable<ChatConverse> chats, string prompt)
         {

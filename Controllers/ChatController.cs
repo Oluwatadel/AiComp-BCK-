@@ -134,8 +134,24 @@ namespace AiComp.Controllers
         [HttpPost("userresponse")]
         public async Task<IActionResult> ResponseToDailyMoodAnalysisQuestions([FromBody] string response)
         {
+            if(string.IsNullOrWhiteSpace(response))
+            {
+                return BadRequest(new
+                {
+                    message = "Response cannot be empty",
+                    status = "Unsuccessful",
+                });
+            }
             var currentUser = await _identityService.GetCurrentUser();
             var moodMessages = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
+            if(moodMessages.Where(a => a.Content.Contains(response) && a.Role == MessageRoleType.User).Any())
+            {
+                return Ok(new
+                {
+                    message = "response given",
+                    status = "Unsuccessful",
+                });
+            }
             var todaysMoodMessage = moodMessages.Where(message => message.TimeCreated.Date == DateTime.UtcNow.Date).ToList();
             if(todaysMoodMessage.Count() >= 8 && todaysMoodMessage[todaysMoodMessage.Count() -1].Role != MessageRoleType.System)
             {
@@ -162,8 +178,8 @@ namespace AiComp.Controllers
             return Ok(new
             {
                 status = "Successful",
-                message = "Mood messge added successfully",
-                Data = new
+                message = "Mood message added successfully",
+                data = new
                 {
                     userResponse = returnMoodMessage.Content,
                     timestamp = returnMoodMessage.TimeCreated,
@@ -179,7 +195,7 @@ namespace AiComp.Controllers
                 var currentUser = await _identityService.GetCurrentUser();
                 var message = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
                 var todaysMoodMessage = message.Where(a => a.TimeCreated.Date == DateTime.Now.Date).ToList();
-                if (message.Count == 0)
+                if (!message.Any())
                 {
                     return BadRequest(new
                     {
@@ -199,11 +215,8 @@ namespace AiComp.Controllers
                     User = currentUser
                 };
 
-                if (!todaysMoodMessage.Any(a => a.UserId == currentUser.Id))
-                {
-                    await _moodMessageService.AddMoodMessageAsync(newMoodMessage);
+                await _moodMessageService.AddMoodMessageAsync(newMoodMessage);
 
-                }
                 var dbResponseOnMoodAddition = await _moodService.AddMoodLog(currentUser, responseToSentiment!);
 
                 if (dbResponseOnMoodAddition == null)
@@ -219,7 +232,7 @@ namespace AiComp.Controllers
                 {
                     message = dbResponseOnMoodAddition?.Message,
                     status = dbResponseOnMoodAddition?.Status,
-                    data = response
+                    data = _aiServices.ChatCompletionAsync(message)
                 });
             }
             catch (Exception ex)
