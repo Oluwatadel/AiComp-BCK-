@@ -1,4 +1,5 @@
-﻿using AiComp.Application.Interfaces.Service;
+﻿using AiComp.Application.DTOs.ValueObjects;
+using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
 using GroqSharp.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -273,9 +274,9 @@ namespace AiComp.Controllers
                 }
                 return Ok(new
                 {
-                    Status = "Successful",
-                    Message = conversation.Message,
-                    Data = conversations.Data!.Select(p => new
+                    status = "Successful",
+                    message = conversation.Message,
+                    data = conversations.Data!.Select(p => new
                     {
                         p.Prompt,
                         p.Response,
@@ -297,18 +298,55 @@ namespace AiComp.Controllers
         [HttpPost("chatstream")]
         public async Task StreamChatCompletionAsync([FromBody] string prompt)
         {
-            var currentUser = await _identityService.GetCurrentUser();
-            var userConversation = await _conversationService.GetConversationAsync(currentUser);
-            var allUserChatWithCompanion = await _chatConverseService.GetChatConverses(userConversation.Data!.Id);
-
-            
-            Response.StatusCode = 200;
-            Response.ContentType = "text/event-stream";
-
-            await foreach(var response in _aiServices.ChatCompletionAsync(allUserChatWithCompanion.Data, prompt))
+            try
             {
-                await Response.WriteAsync(response);
-                await Response.Body.FlushAsync();
+                var currentUser = await _identityService.GetCurrentUser();
+                var userConversation = await _conversationService.GetConversationAsync(currentUser);
+                if(!userConversation.Status)
+                {
+                    var newConversation = new Conversation(currentUser.Id);
+                    userConversation = await _conversationService.AddConversation(currentUser, newConversation);
+                }
+                var allUserChatWithCompanion = await _chatConverseService.GetChatConverses(userConversation.Data!.Id);
+                               
+
+
+                Response.StatusCode = 200;
+                Response.ContentType = "text/event-stream";
+                Response.Headers.Add("Cache-Control", "no-cache");
+
+
+                var streamResponses = allUserChatWithCompanion.Data == null
+                    ? _aiServices.ChatCompletionStream(prompt)
+                    : _aiServices.ChatCompletionStream(allUserChatWithCompanion.Data!.TakeLast(10), prompt);
+
+                var userPrompt = new Prompt(prompt);
+
+
+
+                string fullResponse = "";
+                await foreach (var response in streamResponses)
+                {
+                    if (Response.HttpContext.RequestAborted.IsCancellationRequested)
+                        break;
+
+                    fullResponse += response;
+
+                    await Response.WriteAsync($"data: {response}\n\n");
+                    await Response.Body.FlushAsync();
+                }
+
+                var aiResponse = new Response(fullResponse);
+                var newChat = await _chatConverseService.CreateChatConverse(userPrompt, aiResponse);
+                await _conversationService.AddChatToConversation(userConversation.Data, newChat.Data);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Response.StatusCode = 500;
+                await Response.WriteAsync($"Error: {ex.Message}");
             }
 
         }

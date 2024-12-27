@@ -80,7 +80,7 @@ namespace AiComp.Infrastructure.Services
             return response;
         }
 
-        public async IAsyncEnumerable<string> ChatCompletionAsync(IEnumerable<ChatConverse> chats, string prompt)
+        public async IAsyncEnumerable<string> ChatCompletionStream(IEnumerable<ChatConverse> chats, string prompt)
         {
             var messageArray = new List<Message>
                 {
@@ -102,6 +102,40 @@ namespace AiComp.Infrastructure.Services
                 }
             }
             messageArray.Add(new Message { Content = prompt, Role = MessageRoleType.User });
+
+            IAsyncEnumerable<string> responseStream;
+            try
+            {
+                responseStream = _groq.CreateChatCompletionStreamAsync(messageArray.ToArray());
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in ChatCompletionAsync: {ex.Message}");
+            }
+            await foreach (var response in responseStream)
+            {
+                yield return response;
+            }
+
+        }
+
+        public async IAsyncEnumerable<string> ChatCompletionStream(string prompt)
+        {
+            var messageArray = new List<Message>
+                {
+                    new Message
+                    {
+                        Content = "You are a Companion and the same time a mental Companion who is watching out for red flags like sucidal word or depressive words",
+                        Role = MessageRoleType.System
+                    },
+                    new Message 
+                    { 
+                        Content = prompt, 
+                        Role = MessageRoleType.User 
+                    }
+                };
 
             IAsyncEnumerable<string> responseStream;
             try
