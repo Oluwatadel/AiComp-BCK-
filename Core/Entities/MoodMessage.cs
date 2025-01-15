@@ -1,10 +1,12 @@
 ﻿using GroqSharp.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace AiComp.Domain.Entities
 {
     public class MoodMessage : Message
     {
-        public Guid Id { get; set; } = new Guid();
+        [Key]
+        public Guid MoodMessageId { get; set; }
         public Guid UserId { get; set; }
         public User? User { get; set; }
         public DateTime TimeCreated { get; set; } = DateTime.UtcNow;

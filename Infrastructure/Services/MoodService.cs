@@ -30,7 +30,6 @@ namespace AiComp.Infrastructure.Services
                 response.SetValues("Something went wrong", false, null);
                 return response;
             }
-            await _moodLogRepository.AddMoodLog(moodLog);
             response.SetValues("MoodLog added successfully", true, moodLog);
             return response;
         }
@@ -61,8 +60,14 @@ namespace AiComp.Infrastructure.Services
         public async Task<IEnumerable<MoodLog>> ViewMoodLogsByTime(User user, DateTime startDate, DateTime endDate)
         {
             var logs = await _moodLogRepository.GetMoodLogsDynamically(user.Id);
-            var logsAccordingToUserParameter = logs.Where(a => a.Timestamp >= startDate || a.Timestamp <= endDate);
-            return await Task.FromResult(logsAccordingToUserParameter);
+            var logsAccordingToUserParameter = logs.Where(a => a.Timestamp >= startDate && a.Timestamp <= endDate);
+            return logsAccordingToUserParameter;
+        }
+
+        public async Task<MoodLog> GetTodaysMoodLog(User user)
+        {
+            var mood = await _moodLogRepository.GetAMoodLogDynamically(user.Id, DateTime.Now);
+            return mood != null ? mood : null;
         }
     }
 }

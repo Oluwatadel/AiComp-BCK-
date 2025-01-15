@@ -128,7 +128,6 @@ namespace AiComp.Controllers
             return File(fileBytes, $"image/{fileExtension[1]}");
         }
 
-        [Authorize]
         [HttpGet("p")]
         public async Task<IActionResult> GetProfile()
         {

@@ -25,6 +25,11 @@ namespace AiComp.Infrastructure.Persistence.Repositories
         {
             return await _aiCompDBContext.MoodLogs.Where(a => a.UserId == userId).ToListAsync();
         }
+        
+        public async Task<MoodLog> GetAMoodLogDynamically(Guid userId, DateTime today)
+        {
+            return await _aiCompDBContext.MoodLogs.FirstOrDefaultAsync(a => a.Timestamp.Date == today.Date && a.UserId == userId);
+        }
 
         public async Task<MoodLog> UpdateMoodLog(MoodLog moodLog)
         {

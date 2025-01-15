@@ -86,18 +86,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "prompt",
-        "Type": "System.String",
+        "Name": "request",
+        "Type": "AiComp.Application.DTOs.RequestModel.PromptRequest",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "AiComp.Controllers.ChatController",
@@ -204,12 +198,48 @@
   },
   {
     "ContainingType": "AiComp.Controllers.MoodController",
+    "Method": "GetMoodLogsForTheMonth",
+    "RelativePath": "api/moods/monthly",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.MoodController",
     "Method": "GetMoodLogsForAWeek",
     "RelativePath": "api/moods/weekly",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.OAuthController",
+    "Method": "Authorize",
+    "RelativePath": "api/oauth/authorize",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.OAuthController",
+    "Method": "Callback",
+    "RelativePath": "api/oauth/callback",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

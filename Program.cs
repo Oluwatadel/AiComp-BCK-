@@ -51,6 +51,7 @@ internal class Program
         builder.Services.AddScoped<IConversationService, ConversationService>();
         builder.Services.AddScoped<IMoodMessageService, MoodMessageService>();
         builder.Services.AddScoped<IMoodService, MoodService>();
+        builder.Services.AddScoped<IJsonService, JsonService>();
 
         builder.Services.AddControllers();
 
@@ -83,8 +84,6 @@ internal class Program
                 };
             });
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(o =>
         {

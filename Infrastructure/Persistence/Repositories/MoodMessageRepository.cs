@@ -28,7 +28,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
         public async Task<MoodMessage> GetMoodMessage(Guid moodMessageId)
         {
-            var moodMessage = await _dbContext.MoodMesages.FirstOrDefaultAsync(m => m.Id == moodMessageId);
+            var moodMessage = await _dbContext.MoodMesages.FirstOrDefaultAsync(m => m.MoodMessageId == moodMessageId);
             return moodMessage;
         }
 

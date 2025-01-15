@@ -14,5 +14,6 @@ namespace AiComp.Application.Interfaces.Service
         public Task<ICollection<MoodLog>> ViewMoodLogs(User user);
 
         public Task<IEnumerable<MoodLog>> ViewMoodLogsByTime(User user, DateTime startDate, DateTime endDate);
+        public Task<MoodLog> GetTodaysMoodLog(User user);
     }
 }

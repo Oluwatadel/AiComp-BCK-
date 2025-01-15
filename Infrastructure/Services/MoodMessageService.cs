@@ -1,6 +1,7 @@
 ﻿using AiComp.Application.Interfaces.Repository;
 using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
+using Npgsql;
 
 namespace AiComp.Infrastructure.Services
 {
@@ -17,13 +18,21 @@ namespace AiComp.Infrastructure.Services
 
         public async Task<MoodMessage> AddMoodMessageAsync(MoodMessage message)
         {
-            var returnedMessage = await _repository.AddMoodMessages(message);
-            var changes = await _unitOfWork.SaveChanges();
-            if(changes == 0)
+            try
+            {
+                var returnedMessage = await _repository.AddMoodMessages(message);
+                var changes = await _unitOfWork.SaveChanges();
+                if (changes == 0)
+                {
+                    return null;
+                }
+                return returnedMessage;
+            }
+            catch(Exception ex)
             {
                 return null;
             }
-            return returnedMessage;
+
         }
 
         public async Task<List<MoodMessage>> GetMoodMessagesAsync(Guid userId)

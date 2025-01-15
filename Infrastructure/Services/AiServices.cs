@@ -4,6 +4,8 @@ using GroqSharp.Models;
 using AiComp.Application.Interfaces.Repository;
 using AiComp.Domain.Entities;
 using AiComp.Application.DTOs.ValueObjects;
+using Google.Rpc;
+using AiComp.Application.DTOs;
 namespace AiComp.Infrastructure.Services
 {
     public class AiServices : IAiServices
@@ -73,16 +75,17 @@ namespace AiComp.Infrastructure.Services
         {
             var messageArray = new List<Message>
             {
-                new Message { Content = "You are a psychologist, interpret the given json result of mood analysis in the next message in one sentence", Role = MessageRoleType.System },
-                new Message { Content = message, Role = MessageRoleType.User }
+                new Message { Content = $"Describe my current emotional state with this mood analysis {message} in one sentence", Role = MessageRoleType.System }
             };
             var response = await _groq.CreateChatCompletionAsync(messageArray.ToArray());
             return response;
         }
 
-        public async IAsyncEnumerable<string> ChatCompletionStream(IEnumerable<ChatConverse> chats, string prompt)
+        public async Task<BaseResponse<string>> ChatCompletionStream(IEnumerable<ChatConverse> chats, string prompt)
         {
-            var messageArray = new List<Message>
+            try
+            {
+                var messageArray = new List<Message>
                 {
                     new Message
                     {
@@ -90,67 +93,69 @@ namespace AiComp.Infrastructure.Services
                         Role = MessageRoleType.System
                     }
                 };
-            foreach (var chat in chats)
-            {
-                if (string.IsNullOrWhiteSpace(chat.Prompt.ChatPromptToAi))
+                foreach (var chat in chats)
                 {
-                    messageArray.Add(new Message { Content = chat.Prompt.ChatPromptToAi!, Role = MessageRoleType.User });
+                    if (string.IsNullOrWhiteSpace(chat.Prompt.ChatPromptToAi))
+                    {
+                        messageArray.Add(new Message { Content = chat.Prompt.ChatPromptToAi!, Role = MessageRoleType.User });
+                    }
+                    if (string.IsNullOrWhiteSpace(chat.Response.AiResponse))
+                    {
+                        messageArray.Add(new Message { Content = chat.Response.AiResponse!, Role = MessageRoleType.System });
+                    }
                 }
-                if (string.IsNullOrWhiteSpace(chat.Response.AiResponse))
+                messageArray.Add(new Message { Content = prompt, Role = MessageRoleType.User });
+
+                string response = await _groq.CreateChatCompletionAsync(messageArray.ToArray());
+                var baseResponse = new BaseResponse<string>();
+                if(string.IsNullOrEmpty(response))
                 {
-                    messageArray.Add(new Message { Content = chat.Response.AiResponse!, Role = MessageRoleType.System });
+                    baseResponse.SetValues("Error with GroqShap", false, null);
+                    return baseResponse;
                 }
-            }
-            messageArray.Add(new Message { Content = prompt, Role = MessageRoleType.User });
 
-            IAsyncEnumerable<string> responseStream;
-            try
-            {
-                responseStream = _groq.CreateChatCompletionStreamAsync(messageArray.ToArray());
-
-
+                baseResponse.SetValues("Success", true, response);
+                return baseResponse;
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error in ChatCompletionAsync: {ex.Message}");
             }
-            await foreach (var response in responseStream)
-            {
-                yield return response;
-            }
 
         }
 
-        public async IAsyncEnumerable<string> ChatCompletionStream(string prompt)
+        public async Task<BaseResponse<string>> ChatCompletionStream(string prompt)
         {
-            var messageArray = new List<Message>
+            try
+            {
+                var messageArray = new List<Message>
                 {
                     new Message
                     {
                         Content = "You are a Companion and the same time a mental Companion who is watching out for red flags like sucidal word or depressive words",
                         Role = MessageRoleType.System
                     },
-                    new Message 
-                    { 
-                        Content = prompt, 
-                        Role = MessageRoleType.User 
+                    new Message
+                    {
+                        Content = prompt,
+                        Role = MessageRoleType.User
                     }
                 };
 
-            IAsyncEnumerable<string> responseStream;
-            try
-            {
-                responseStream = _groq.CreateChatCompletionStreamAsync(messageArray.ToArray());
+                string response = await _groq.CreateChatCompletionAsync(messageArray.ToArray());
+                var baseResponse = new BaseResponse<string>();
+                if (string.IsNullOrEmpty(response))
+                {
+                    baseResponse.SetValues("Error with GroqShap", false, null);
+                    return baseResponse;
+                }
 
-
+                baseResponse.SetValues("Success", true, response);
+                return baseResponse;
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error in ChatCompletionAsync: {ex.Message}");
-            }
-            await foreach (var response in responseStream)
-            {
-                yield return response;
             }
 
         }

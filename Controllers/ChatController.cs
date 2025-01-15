@@ -1,11 +1,11 @@
-﻿using AiComp.Application.DTOs.ValueObjects;
+﻿using AiComp.Application.DTOs.RequestModel;
+using AiComp.Application.DTOs.ValueObjects;
 using AiComp.Application.Interfaces.Service;
 using AiComp.Domain.Entities;
 using GroqSharp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using System.Text.RegularExpressions;
 
 
 namespace AiComp.Controllers
@@ -23,11 +23,12 @@ namespace AiComp.Controllers
         private readonly IConfiguration _configuration;
         private readonly IMoodMessageService _moodMessageService;
         private readonly IMoodService _moodService;
+        private readonly IJsonService _jsonService;
 
 
 
         public ChatController(IConfiguration configuration, IAiServices aiServices, IUserService userService, IChatConverseService chatConverseService, IConversationService conversationService,
-            IIdentityService identityService, IMoodMessageService moodMessageService, IMoodService moodService)
+            IIdentityService identityService, IMoodMessageService moodMessageService, IMoodService moodService, IJsonService jsonService)
         {
             _configuration = configuration;
             _aiServices = aiServices;
@@ -37,6 +38,7 @@ namespace AiComp.Controllers
             _identityService = identityService;
             _moodMessageService = moodMessageService;
             _moodService = moodService;
+            _jsonService = jsonService;
         }
 
         [HttpGet("questions")]
@@ -52,7 +54,7 @@ namespace AiComp.Controllers
 
             if (todaysMoodMessage.Count() > 0)
             {
-                if (todaysMoodMessage.Count < 9 && todaysMoodMessage?.LastOrDefault()?.Role == MessageRoleType.System)
+                if (todaysMoodMessage.Count < 8 && todaysMoodMessage?.LastOrDefault()?.Role == MessageRoleType.System)
                     return Ok(new
                     {
                         message = $"There is no response to {moodMessages.LastOrDefault().Content}",
@@ -145,7 +147,18 @@ namespace AiComp.Controllers
             }
             var currentUser = await _identityService.GetCurrentUser();
             var moodMessages = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
-            if(moodMessages.Where(a => a.Content.Contains(response) && a.Role == MessageRoleType.User).Any())
+
+            MoodMessage moodMessageAlreadyExisted = null;
+
+            foreach(var message in moodMessages)
+            {
+                if (message == moodMessages.LastOrDefault() && message.Content.Contains(response)
+                    && message.TimeCreated.Date == DateTime.Now.Date && message.Role == MessageRoleType.User)
+                {
+                    moodMessageAlreadyExisted = message;
+                }
+            }
+            if (moodMessageAlreadyExisted != null)
             {
                 return Ok(new
                 {
@@ -194,30 +207,40 @@ namespace AiComp.Controllers
             try
             {
                 var currentUser = await _identityService.GetCurrentUser();
+                var moodForToday = _moodService.GetTodaysMoodLog(currentUser);
                 var message = await _moodMessageService.GetMoodMessagesAsync(currentUser.Id);
                 var todaysMoodMessage = message.Where(a => a.TimeCreated.Date == DateTime.Now.Date).ToList();
                 if (!message.Any())
                 {
                     return BadRequest(new
                     {
-                        Status = "Not Found",
+                        status = false,
                         message = "Your mood has not been analysed today"
                     });
                 }
+                var lastMessage = todaysMoodMessage.LastOrDefault();
+                if (string.IsNullOrEmpty(lastMessage.Content) || string.IsNullOrWhiteSpace(lastMessage.Content))
+                {
+                    var moodMessageToBeDeleted = todaysMoodMessage.LastOrDefault();
+                    await _moodMessageService.DeleteMoodMessageAsync(moodMessageToBeDeleted.MoodMessageId );
+                }
+                if (todaysMoodMessage.Count > 8)
+                    return Ok(new
+                    {
+                        status = false,
+                        message = "Your mood has not been analysed today"
+                    });
+                if (todaysMoodMessage.Count < 8)
+                    return BadRequest(new
+                    {
+                        status = false,
+                        message = "Answer all questions before mood can be analysed accurately"
+                    });
                 var response = "";
 
                 response = await _aiServices.ChatCompletionAsync(todaysMoodMessage);
-                var responseToSentiment = await ConvertJsonStringToSentimentPrediction(response);
-                var newMoodMessage = new MoodMessage()
-                {
-                    Content = response,
-                    Role = MessageRoleType.System,
-                    UserId = currentUser.Id,
-                    User = currentUser
-                };
-
-                await _moodMessageService.AddMoodMessageAsync(newMoodMessage);
-
+                var responseToSentiment = await _jsonService.ConvertJsonStringToSentimentPrediction(response);
+                
                 var dbResponseOnMoodAddition = await _moodService.AddMoodLog(currentUser, responseToSentiment!);
 
                 if (dbResponseOnMoodAddition == null)
@@ -229,11 +252,22 @@ namespace AiComp.Controllers
                         data = dbResponseOnMoodAddition?.Data
                     });
                 }
+                var result = await _aiServices.ChatCompletionAsync(response);
+                var newMoodMessage = new MoodMessage()
+                {
+                    MoodMessageId = Guid.NewGuid(),
+                    Content = result,
+                    Role = MessageRoleType.System,
+                    UserId = currentUser.Id,
+                };
+
+                await _moodMessageService.AddMoodMessageAsync(newMoodMessage);
+
                 return Ok(new
                 {
                     message = dbResponseOnMoodAddition?.Message,
                     status = dbResponseOnMoodAddition?.Status,
-                    data = _aiServices.ChatCompletionAsync(message)
+                    data = result  
                 });
             }
             catch (Exception ex)
@@ -296,7 +330,7 @@ namespace AiComp.Controllers
         }
 
         [HttpPost("chatstream")]
-        public async Task StreamChatCompletionAsync([FromBody] string prompt)
+        public async Task<IActionResult> StreamChatCompletionAsync([FromBody] PromptRequest request)
         {
             try
             {
@@ -308,81 +342,32 @@ namespace AiComp.Controllers
                     userConversation = await _conversationService.AddConversation(currentUser, newConversation);
                 }
                 var allUserChatWithCompanion = await _chatConverseService.GetChatConverses(userConversation.Data!.Id);
-                               
 
+                var response = allUserChatWithCompanion.Data == null
+                    ? await _aiServices.ChatCompletionStream(request.Prompt)
+                    : await _aiServices.ChatCompletionStream(allUserChatWithCompanion.Data!.TakeLast(10), request.Prompt);
 
-                Response.StatusCode = 200;
-                Response.ContentType = "text/event-stream";
-                Response.Headers.Add("Cache-Control", "no-cache");
+                var userPrompt = new Prompt(request.Prompt);
 
-
-                var streamResponses = allUserChatWithCompanion.Data == null
-                    ? _aiServices.ChatCompletionStream(prompt)
-                    : _aiServices.ChatCompletionStream(allUserChatWithCompanion.Data!.TakeLast(10), prompt);
-
-                var userPrompt = new Prompt(prompt);
-
-
-
-                string fullResponse = "";
-                await foreach (var response in streamResponses)
+                if(!response.Status)
                 {
-                    if (Response.HttpContext.RequestAborted.IsCancellationRequested)
-                        break;
-
-                    fullResponse += response;
-
-                    await Response.WriteAsync($"data: {response}\n\n");
-                    await Response.Body.FlushAsync();
+                    return BadRequest(response.Message);
                 }
-
-                var aiResponse = new Response(fullResponse);
+                var aiResponse = new Response(response.Data);
                 var newChat = await _chatConverseService.CreateChatConverse(userPrompt, aiResponse);
                 await _conversationService.AddChatToConversation(userConversation.Data, newChat.Data);
 
+                return Ok(response);
 
 
             }
             catch (Exception ex)
             {
-                Response.StatusCode = 500;
-                await Response.WriteAsync($"Error: {ex.Message}");
+                return StatusCode(500, ex.Message);
             }
 
         }
 
-        private async Task<SentimentPrediction?> ConvertJsonStringToSentimentPrediction(string aiJson)
-        {
-            var refinedJson = await MoodObjRegexPatternMatch(aiJson);
-            var returnedSentiment = new SentimentPrediction();
-            using (var doc = JsonDocument.Parse(refinedJson))
-            {
-                JsonElement root = doc.RootElement;
-                var sentiment = root.GetProperty("Mood");
-
-                //Accessing the properties
-                string emotion = sentiment.GetProperty("Emotion").GetString()!;
-                int intensity = sentiment.GetProperty("Intensity").GetInt32();
-                returnedSentiment.Intensity = intensity;
-                returnedSentiment.SetText(emotion);
-            }
-
-            return await Task.FromResult(returnedSentiment);
-        }
-
-        private async Task<string?> MoodObjRegexPatternMatch(string aiJson)
-        {
-            string returnJson = "";
-            string pattern = "\"Mood\":\\s*\\{[^}]*\\}";
-
-            Match match = Regex.Match(aiJson, pattern);
-
-            if (match.Success)
-            {
-                returnJson = $"{{{match.Value}}}";
-                return await Task.FromResult(returnJson);
-            }
-            return await Task.FromResult(returnJson);
-        }
+        
     }
 }

@@ -73,7 +73,7 @@ namespace AiComp.Migrations
 
             modelBuilder.Entity("AiComp.Domain.Entities.MoodMessage", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("MoodMessageId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -90,7 +90,7 @@ namespace AiComp.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
-                    b.HasKey("Id");
+                    b.HasKey("MoodMessageId");
 
                     b.HasIndex("UserId");
 
@@ -166,10 +166,10 @@ namespace AiComp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("92b0fba4-ec65-46ba-a8d5-414c84f20800"),
+                            Id = new Guid("b1d3aaed-ad9c-4536-9a3b-8a1481fd116e"),
                             Email = "admin@aicomp.com",
                             IsConsented = false,
-                            Password = "$2a$11$CVgYknRQRg9Jj1it1wP9puUC9u38go42l9TxSHIyn1TqBQGa6OOrS"
+                            Password = "$2a$11$hox8kGiG2yH8vZ0D8PGeouxpxz1zweVa6KOLdIGZupWHz3pBDNcpy"
                         });
                 });
 

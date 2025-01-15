@@ -1,5 +1,7 @@
 ﻿using AiComp.Application.DTOs.RequestModel;
 using AiComp.Application.Interfaces.Service;
+using AiComp.Domain.Entities;
+using AiComp.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +12,6 @@ namespace AiComp.Controllers
     [Route("api/")]
     [ApiController]
     [Authorize]
-
     public class MoodController : ControllerBase
     {
         private readonly IMoodService _moodService;
@@ -43,7 +44,14 @@ namespace AiComp.Controllers
                 {
                     Status = "Successful",
                     Message = $"{moodLogs.Count} mood found",
-                    Data = moodLogs
+                    Data = moodLogs.Select(m => new
+                    {
+                        id = m.Id,
+                        emotion = m.Emotion,
+                        intensity = m.Intensity,
+                        timestamp = m.Timestamp,
+                        userId = m.UserId
+                    })
                 });
             }
             catch (Exception ex)
@@ -84,12 +92,48 @@ namespace AiComp.Controllers
         }
 
 
+        [HttpGet("moods/monthly")]
+        public async Task<IActionResult> GetMoodLogsForTheMonth()
+        {
+            try
+            {
+                var currentUser = await _identityService.GetCurrentUser();
+                var today = DateTime.UtcNow;
+                var weeklyMoodLog = await _moodService.ViewMoodLogsByTime(currentUser, today.AddDays(-30), today);
+                if (!weeklyMoodLog.Any())
+                {
+                    return NotFound();
+                }
+                return Ok(new
+                {
+                    Status = "Success",
+                    Message = "MoodLogs found",
+                    Data = weeklyMoodLog.Select(m => new
+                    {
+                        m.Id,
+                        m.Emotion,
+                        m.Intensity,
+                        m.Timestamp
+                    })
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
         [HttpGet("mood/Search")]
         public async Task<IActionResult> GetMoodLogsForDaysSpecifiedByUser([FromQuery] MoodSearchRequest request)
         { 
             try
             {
                 var currentUser = await _identityService.GetCurrentUser();
+                if(currentUser == null)
+                {
+                    return Unauthorized();
+                }
                 var logsBasedOnUserSearch = await _moodService.ViewMoodLogsByTime(currentUser, request.StartDate, request.EndDate);
                 if (!logsBasedOnUserSearch.Any())
                 {
@@ -113,5 +157,7 @@ namespace AiComp.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+       
     }
 }

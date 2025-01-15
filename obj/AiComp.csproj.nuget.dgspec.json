@@ -54,6 +54,10 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.68.0, )"
+            },
             "Google.Cloud.Dialogflow.V2": {
               "target": "Package",
               "version": "[4.21.0, )"
@@ -91,6 +95,10 @@
             "Microsoft.Owin.Security": {
               "target": "Package",
               "version": "[4.2.2, )"
+            },
+            "Mono.HttpUtility": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
