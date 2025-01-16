@@ -42,6 +42,8 @@ internal class Program
         builder.Services.AddScoped<IMoodMessageRepository, MoodMessageRepository>(); 
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
+        builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
+        builder.Services.AddScoped<IJournalRepository, JournalRepository>();
         builder.Services.AddScoped<IAiServices, AiServices>();
         builder.Services.AddScoped<IIdentityService, IdentityService>();
         builder.Services.AddScoped<IProfileService, ProfileService>();
@@ -52,6 +54,9 @@ internal class Program
         builder.Services.AddScoped<IMoodMessageService, MoodMessageService>();
         builder.Services.AddScoped<IMoodService, MoodService>();
         builder.Services.AddScoped<IJsonService, JsonService>();
+        builder.Services.AddScoped<INotificationService, NotificationService>();
+        builder.Services.AddScoped<IJournalService, JournalService>();
+
 
         builder.Services.AddControllers();
 

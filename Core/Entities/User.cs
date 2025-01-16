@@ -1,4 +1,6 @@
-﻿namespace AiComp.Domain.Entities
+﻿using AiComp.Core.Entities;
+
+namespace AiComp.Domain.Entities
 {
     public class User : BaseEntity
     {
@@ -11,6 +13,7 @@
         public List<MoodLog> MoodLogs = new List<MoodLog>();
 
         public List<MoodMessage> MoodMessages = new List<MoodMessage>();
+        public List<Journal> Journals = new List<Journal>();
 
         public User(string email) { Email = email; }
 

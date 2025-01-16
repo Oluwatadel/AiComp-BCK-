@@ -1,6 +1,7 @@
 ﻿using AiComp.Application.DTOs.RequestModel;
 using AiComp.Application.DTOs.ValueObjects;
 using AiComp.Application.Interfaces.Service;
+using AiComp.Core.Entities;
 using AiComp.Domain.Entities;
 using GroqSharp.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -24,11 +25,14 @@ namespace AiComp.Controllers
         private readonly IMoodMessageService _moodMessageService;
         private readonly IMoodService _moodService;
         private readonly IJsonService _jsonService;
+        private readonly INotificationService _notificationService;
 
 
 
-        public ChatController(IConfiguration configuration, IAiServices aiServices, IUserService userService, IChatConverseService chatConverseService, IConversationService conversationService,
-            IIdentityService identityService, IMoodMessageService moodMessageService, IMoodService moodService, IJsonService jsonService)
+        public ChatController(IConfiguration configuration, IAiServices aiServices, IUserService userService, 
+            IChatConverseService chatConverseService, IConversationService conversationService,
+            IIdentityService identityService, IMoodMessageService moodMessageService, IMoodService moodService, 
+            IJsonService jsonService,INotificationService notificationService)
         {
             _configuration = configuration;
             _aiServices = aiServices;
@@ -39,6 +43,7 @@ namespace AiComp.Controllers
             _moodMessageService = moodMessageService;
             _moodService = moodService;
             _jsonService = jsonService;
+            _notificationService = notificationService;
         }
 
         [HttpGet("questions")]
@@ -243,6 +248,7 @@ namespace AiComp.Controllers
                 
                 var dbResponseOnMoodAddition = await _moodService.AddMoodLog(currentUser, responseToSentiment!);
 
+
                 if (dbResponseOnMoodAddition == null)
                 {
                     return BadRequest(new
@@ -253,6 +259,7 @@ namespace AiComp.Controllers
                     });
                 }
                 var result = await _aiServices.ChatCompletionAsync(response);
+
                 var newMoodMessage = new MoodMessage()
                 {
                     MoodMessageId = Guid.NewGuid(),
@@ -263,11 +270,26 @@ namespace AiComp.Controllers
 
                 await _moodMessageService.AddMoodMessageAsync(newMoodMessage);
 
+                var newNotification = new Notification
+                {
+                    description = $"Your mood has been analysed and {result}",
+                    TimeOfActivity = DateTime.UtcNow,
+                    UserId = currentUser.Id,
+                };
+                var returnNotification = _notificationService.AddNotificationAsync(currentUser.Id, newNotification);
+                if(returnNotification == null)
+                {
+                    return BadRequest(new
+                    {
+                        status = false,
+                        message = "issue with saving notification"
+                    });
+                }
                 return Ok(new
                 {
                     message = dbResponseOnMoodAddition?.Message,
                     status = dbResponseOnMoodAddition?.Status,
-                    data = result  
+                    data = result
                 });
             }
             catch (Exception ex)

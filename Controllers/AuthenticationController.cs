@@ -24,84 +24,86 @@ namespace AiComp.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserRequestModel request)
         {
-            var user = await _userService.UserExist(request.Email);
-            if (user == true) return Conflict(new
+            try
             {
-                status = "Duplicate email",
-                message = "Duplicate Email",
-                statusCode = 409
-            });
-            var newUser = await _userService.AddUserAsync(request);
-            return Created("", new
-            {
-                status = "success",
-                message = "Registration Successfull",
-                data = new
+                var user = await _userService.UserExist(request.Email);
+                if (user == true) return Conflict(new
                 {
-                    newUser.Id,
-                    newUser.Email,
-                }
-            });
+                    status = "Duplicate email",
+                    message = "Duplicate Email",
+                    statusCode = 409
+                });
+                var newUser = await _userService.AddUserAsync(request);
+                return Created("", new
+                {
+                    status = "success",
+                    message = "Registration Successfull",
+                    data = new
+                    {
+                        newUser.Id,
+                        newUser.Email,
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestModel request)
         {
-            var userExist = await _userService.UserExist(request.Email);
-            if (!userExist) return StatusCode(401);
-            var passWordCheck = await _identityService.AuthenticateUser(request.Email, request.Password);
-            if(!passWordCheck)
+            try
             {
-                return StatusCode(401);
+                var userExist = await _userService.UserExist(request.Email);
+                if (!userExist) return StatusCode(401);
+                var passWordCheck = await _identityService.AuthenticateUser(request.Email, request.Password);
+                if (!passWordCheck)
+                {
+                    return StatusCode(401);
+                }
+
+                var user = await _userService.GetUserAsync(request.Email);
+                var token = _identityService.GenerateToken(user);
+                if (user.Profile == null) return Ok(new
+                {
+                    status = "Successfull",
+                    message = "Login successfull",
+                    data = new
+                    {
+                        accessToken = token,
+                        user = new
+                        {
+                            user.Id,
+                            user.Email,
+                        },
+                    },
+                    user.Profile,
+
+                });
+
+
+                return Ok(new
+                {
+                    status = "Successfull",
+                    message = "Login successfull",
+                    data = new
+                    {
+                        accessToken = token,
+                        user = new
+                        {
+                            user.Id,
+                            user.Email,
+                        },
+                    },
+                    profile = true
+                });
             }
-
-            var user = await _userService.GetUserAsync(request.Email);
-            var token = _identityService.GenerateToken(user);
-            if (user.Profile == null) return Ok(new
+            catch (Exception ex)
             {
-                status = "Successfull",
-                message = "Login successfull",
-                data = new
-                {
-                    accessToken = token,
-                    user = new
-                    {
-                        user.Id,
-                        user.Email,
-                    },
-                },
-                user.Profile,
-
-            });
-
-
-            return Ok(new
-            {
-                status = "Successfull",
-                message = "Login successfull",
-                data = new
-                {
-                    accessToken = token,
-                    user = new
-                    {
-                        user.Id,
-                        user.Email,
-                    },
-                },
-                profile = true
-                //profile = new
-                //{
-                //    user.Profile.FirstName,
-                //    user.Profile.LastName,
-                //    user.Profile.FullNameOfNextOfKin,
-                //    user.Profile.ContactOfNextOfKin,
-                //    user.Profile.Age,
-                //    user.Profile.Gender,
-                //    user.Profile.ProfilePicture,
-                //    user.Profile.Occupation,
-                //    user.Profile.Address,
-                //}
-            });
+                return BadRequest(ex.Message);
+            }
         }
 
         [Authorize]
@@ -153,24 +155,31 @@ namespace AiComp.Controllers
         [HttpGet("GetAll")]
         public async Task<IActionResult> GetAllUsers()
         {
-            var users = await _userService.GetAllUsers();
-            if(users.Count == 0)
+            try
             {
-                return NoContent();
-            }
-
-            return Ok(new
-            {
-                message = $"{users.Count} users yet to register",
-                status = "Successful",
-                statusCode = 200,
-                Data = users.Select(p => new
+                var users = await _userService.GetAllUsers();
+                if (users.Count == 0)
                 {
-                    email = p.Email,
-                    isConsented = p.IsConsented,
-                    
-                })
-            });
+                    return NoContent();
+                }
+
+                return Ok(new
+                {
+                    message = $"{users.Count} users yet to register",
+                    status = "Successful",
+                    statusCode = 200,
+                    Data = users.Select(p => new
+                    {
+                        email = p.Email,
+                        isConsented = p.IsConsented,
+
+                    })
+                });
+            }
+            catch(Exception e)
+            {
+                return NotFound();
+            }
         }
 
         

@@ -3,6 +3,7 @@ using System;
 using AiComp.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AiComp.Migrations
 {
     [DbContext(typeof(AiCompDBContext))]
-    partial class AiCompDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250116114111_newDb")]
+    partial class newDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,9 +37,6 @@ namespace AiComp.Migrations
                     b.Property<DateTime>("TimeCreate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Title")
-                        .HasColumnType("text");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
@@ -44,29 +44,7 @@ namespace AiComp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Journals");
-                });
-
-            modelBuilder.Entity("AiComp.Core.Entities.Notification", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime?>("TimeOfActivity")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("description")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Notifications");
+                    b.ToTable("Journal");
                 });
 
             modelBuilder.Entity("AiComp.Domain.Entities.Conversation", b =>
@@ -213,10 +191,10 @@ namespace AiComp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("aa3b4ae4-c0db-4283-9684-283665bc7747"),
+                            Id = new Guid("d67ed606-6153-47b9-be69-dcf010d5b483"),
                             Email = "admin@aicomp.com",
                             IsConsented = false,
-                            Password = "$2a$11$re3e/Znxdu70vAfpLY3uwO/hs57eGlcI8JM3mdMgzvHd.kjLBMCEq"
+                            Password = "$2a$11$KTIbWd4nS2Y2u/wVFXJ4QeqnECqfOQVo3EoLyue0LxQO1zLck8HP2"
                         });
                 });
 
@@ -224,17 +202,6 @@ namespace AiComp.Migrations
                 {
                     b.HasOne("AiComp.Domain.Entities.User", "User")
                         .WithMany("Journals")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("AiComp.Core.Entities.Notification", b =>
-                {
-                    b.HasOne("AiComp.Domain.Entities.User", "User")
-                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

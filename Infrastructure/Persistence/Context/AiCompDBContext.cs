@@ -1,5 +1,6 @@
 ﻿using AiComp.Application;
 using AiComp.Application.DTOs.ValueObjects;
+using AiComp.Core.Entities;
 using AiComp.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,7 @@ namespace AiComp.Infrastructure.Persistence.Context
             modelBuilder.Entity<User>().HasOne(x => x.Profile).WithOne(p => p.User);
             modelBuilder.Entity<User>().HasMany(x => x.MoodLogs).WithOne(p => p.User).HasForeignKey(k => k.UserId);
             modelBuilder.Entity<User>().HasMany(x => x.MoodMessages).WithOne(p => p.User).HasForeignKey(p => p.UserId);
+            modelBuilder.Entity<User>().HasMany(x => x.Journals).WithOne(p => p.User).HasForeignKey(p => p.UserId);
 
             var admin = new User("admin@aicomp.com");
             admin.AddPassword("string");
@@ -44,8 +46,10 @@ namespace AiComp.Infrastructure.Persistence.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Journal> Journals { get; set; }
         public DbSet<MoodLog> MoodLogs { get; set; }
         public DbSet<MoodMessage> MoodMesages { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
         public DbSet<Profile> Profiles { get; set; }
     }
 }

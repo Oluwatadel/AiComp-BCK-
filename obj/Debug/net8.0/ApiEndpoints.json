@@ -120,6 +120,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AiComp.Controllers.JournalController",
+    "Method": "AddJournal",
+    "RelativePath": "api/Journal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalRequest",
+        "Type": "AiComp.Application.DTOs.RequestModel.JournalRequestModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.JournalController",
+    "Method": "DeleteJournal",
+    "RelativePath": "api/Journal",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.JournalController",
+    "Method": "GetAllJournals",
+    "RelativePath": "api/Journal",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AiComp.Controllers.MoodMessagesController",
     "Method": "GetAllMoodMessages",
     "RelativePath": "api/message/all",
@@ -210,6 +252,16 @@
     "ContainingType": "AiComp.Controllers.MoodController",
     "Method": "GetMoodLogsForAWeek",
     "RelativePath": "api/moods/weekly",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AiComp.Controllers.NotificationController",
+    "Method": "GetAllNotification",
+    "RelativePath": "api/Notification",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

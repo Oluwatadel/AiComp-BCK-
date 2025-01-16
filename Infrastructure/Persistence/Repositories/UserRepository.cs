@@ -29,7 +29,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
 
         public async Task<User> GetUser(Expression<Func<User, bool>> pred)
         {
-            var user = await _dbContext.Users.Include(a => a.Profile).SingleOrDefaultAsync(pred);
+            var user = await _dbContext.Users.SingleOrDefaultAsync(pred);
             return user;
         }
         public async Task<User> UpdateUser(User user)
