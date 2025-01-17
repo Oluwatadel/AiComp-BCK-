@@ -48,9 +48,15 @@ namespace AiComp.Controllers
 
             return Ok(new
             {
-                data = returnNotification,
                 message = "Sucess",
-                status = "true"
+                status = "true",
+                data = returnNotification.Select(p => new
+                {
+                    id = p.Id,
+                    userId = p.UserId,
+                    description = p.description,
+                    timestamp = p.TimeOfActivity,
+                }),
             });
         }
     }

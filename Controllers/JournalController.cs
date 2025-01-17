@@ -129,7 +129,12 @@ namespace AiComp.Controllers
                 return Ok(new
                 {
                     status = true,
-                    data = journals
+                    data = journals.Select(p => new
+                    {
+                        id = p.Id,
+                        content = p.Content,
+                        timestamp = p.TimeCreate
+                    })
                 });
             }
             catch (Exception ex)
