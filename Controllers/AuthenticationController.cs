@@ -66,23 +66,6 @@ namespace AiComp.Controllers
 
                 var user = await _userService.GetUserAsync(request.Email);
                 var token = _identityService.GenerateToken(user);
-                if (user.Profile == null) return Ok(new
-                {
-                    status = "Successfull",
-                    message = "Login successfull",
-                    data = new
-                    {
-                        accessToken = token,
-                        user = new
-                        {
-                            user.Id,
-                            user.Email,
-                        },
-                    },
-                    user.Profile,
-
-                });
-
 
                 return Ok(new
                 {

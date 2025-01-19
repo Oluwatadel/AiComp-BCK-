@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\persistence\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\persistence\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\journalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\journalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -33,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:core\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\persistence\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\core\\entities\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\application\\interfaces\\repository\\inotificationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -149,10 +153,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\application\\interfaces\\service\\imoodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:application\\interfaces\\service\\imoodservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\persistence\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|solutionrelative:infrastructure\\persistence\\repositories\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3B05675B-13DF-4C5B-B332-B6765946FEF8}|AiComp.csproj|c:\\users\\oluwa\\documents\\programming\\software journey\\projects\\mental companion\\aicomp-bck-\\infrastructure\\services\\moodmessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -274,7 +274,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -282,44 +282,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\User.cs",
-              "RelativeToolTip": "Core\\Entities\\User.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T17:54:56.836Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "Profile.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Profile.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Profile.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Profile.cs",
-              "RelativeToolTip": "Core\\Entities\\Profile.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA7wAcAAAA2AAAAAAAAAA==",
+              "Title": "Journal.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Journal.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Journal.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Journal.cs",
+              "RelativeToolTip": "Core\\Entities\\Journal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-15T18:19:56.351Z"
+              "WhenOpened": "2025-01-16T11:35:58.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAywMwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Sentiment_data.csv",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Sentiment_data.csv",
+              "RelativeDocumentMoniker": "Sentiment_data.csv",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Sentiment_data.csv",
+              "RelativeToolTip": "Sentiment_data.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2025-01-16T19:24:18.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:49:59.523Z",
+              "WhenOpened": "2025-01-16T12:20:54.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "ProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T11:45:55.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JournalController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\JournalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\JournalController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\JournalController.cs",
+              "RelativeToolTip": "Controllers\\JournalController.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T14:58:03.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\BaseEntity.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\BaseEntity.cs",
@@ -327,25 +353,61 @@
               "RelativeToolTip": "Core\\Entities\\BaseEntity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T17:55:52.435Z",
+              "WhenOpened": "2024-12-14T17:55:52.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAuwIkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T19:49:59.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "JournalController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\JournalController.cs",
-              "RelativeDocumentMoniker": "Controllers\\JournalController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\JournalController.cs",
-              "RelativeToolTip": "Controllers\\JournalController.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAIIAAAAiAAAAAAAAAA==",
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAIwEIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T14:58:03.034Z",
+              "WhenOpened": "2024-12-12T20:09:06.727Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Controllers\\NotificationController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowDoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:54:08.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T12:27:31.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
@@ -358,58 +420,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NotificationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\NotificationRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Profile.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Profile.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\Profile.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Profile.cs",
+              "RelativeToolTip": "Core\\Entities\\Profile.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA7wAcAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T12:27:31.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-15T18:19:56.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "Controllers\\NotificationController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowDoAAAATAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "Core\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\User.cs",
+              "RelativeToolTip": "Core\\Entities\\User.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T13:54:08.498Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-14T17:54:56.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Journal.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Journal.cs",
-              "RelativeDocumentMoniker": "Core\\Entities\\Journal.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Journal.cs",
-              "RelativeToolTip": "Core\\Entities\\Journal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T11:35:58.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Sentiment_data.csv",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Sentiment_data.csv",
-              "RelativeDocumentMoniker": "Sentiment_data.csv",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Sentiment_data.csv",
-              "RelativeToolTip": "Sentiment_data.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2025-01-16T19:24:18.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "AiCompDBContext.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Context\\AiCompDBContext.cs",
@@ -421,19 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T12:20:54.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "IdentityService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\IdentityService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\IdentityService.cs",
@@ -445,7 +468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "JournalService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\JournalService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\JournalService.cs",
@@ -457,7 +480,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "OAuthController.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\OAuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\OAuthController.cs",
@@ -469,7 +492,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "IJournalRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Repository\\IJournalRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repository\\IJournalRepository.cs",
@@ -481,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "JournalRequestModel.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\DTOs\\RequestModel\\JournalRequestModel.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\RequestModel\\JournalRequestModel.cs",
@@ -493,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
@@ -505,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "JournalReposiotry.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\JournalReposiotry.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\JournalReposiotry.cs",
@@ -517,19 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwJsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T20:09:06.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "IJournalService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Service\\IJournalService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Service\\IJournalService.cs",
@@ -541,7 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -553,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "INotificationRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Repository\\INotificationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repository\\INotificationRepository.cs",
@@ -565,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Notifications.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Notifications.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Notifications.cs",
@@ -577,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "INotificationService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Service\\INotificationService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Service\\INotificationService.cs",
@@ -589,7 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "AiServices.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\AiServices.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\AiServices.cs",
@@ -601,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\NotificationService.cs",
@@ -613,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "MoodService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Services\\MoodService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\MoodService.cs",
@@ -625,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "MoodController.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\MoodController.cs",
               "RelativeDocumentMoniker": "Controllers\\MoodController.cs",
@@ -637,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "MoodLogRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\MoodLogRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\MoodLogRepository.cs",
@@ -649,7 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ChatConverseResponsitory.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\ChatConverseResponsitory.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\ChatConverseResponsitory.cs",
@@ -661,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "MoodMessageRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\MoodMessageRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\MoodMessageRepository.cs",
@@ -673,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "IConversationRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Repository\\IConversationRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repository\\IConversationRepository.cs",
@@ -685,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "Conversation.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\Conversation.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\Conversation.cs",
@@ -697,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "IMoodLogRepository.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Repository\\IMoodLogRepository.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Repository\\IMoodLogRepository.cs",
@@ -709,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "MoodLog.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Core\\Entities\\MoodLog.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\MoodLog.cs",
@@ -733,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "IMoodService.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Application\\Interfaces\\Service\\IMoodService.cs",
               "RelativeDocumentMoniker": "Application\\Interfaces\\Service\\IMoodService.cs",
@@ -766,18 +777,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-15T18:19:54.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "ProfileRepository.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T11:45:55.384Z"
             },
             {
               "$type": "Document",
