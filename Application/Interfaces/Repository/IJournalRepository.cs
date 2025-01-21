@@ -10,6 +10,6 @@ namespace AiComp.Application.Interfaces.Repository
         public void DeleteJournal(Journal journal);
         public Task<Journal> UpdateJournalAsync(Journal journal);
         public Task<ICollection<Journal>> GetAllJournalsOfACertainUser(Guid Id);
-        public bool JournalExist(string journalTitle);
+        public Task<bool> JournalExist(string journalTitle);
     }
 }

@@ -22,7 +22,7 @@ namespace AiComp.Controllers
             _journalService = journalService;
         }
 
-        [HttpPost]
+        [HttpPost("add/journal")]
         public async Task<IActionResult> AddJournal([FromBody] JournalRequestModel journalRequest)
         {
             try
@@ -43,6 +43,10 @@ namespace AiComp.Controllers
                     Content = journalRequest.Content,
                     UserId = currentUser.Id,
                 };
+
+                var journalExist = await _journalService.JournalExistWithTheTitleAsync(journal);
+                if (journalExist)
+                    return Conflict("There is a journal with the same title");
 
                 var SavedJournal = await _journalService.AddJournalAsync(currentUser.Id, journal);
                 if (!SavedJournal.Status && SavedJournal.Data == null)
@@ -67,7 +71,7 @@ namespace AiComp.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("delete/journal/{journalId}")]
         public async Task<IActionResult> DeleteJournal([FromQuery] Guid journalId)
         {
             try
@@ -106,8 +110,7 @@ namespace AiComp.Controllers
 
         }
 
-
-        [HttpGet]
+        [HttpGet("view/journals")]
         public async Task<IActionResult> GetAllJournals()
         {
             try

@@ -78,6 +78,11 @@ namespace AiComp.Infrastructure.Services
             return journal;
         }
 
+        public Task<bool> JournalExistWithTheTitleAsync(Journal journal)
+        {
+            return _journalRepository.JournalExist(journal.Title);
+        }
+
         public async Task<Journal> UpdateJournalAsync(Journal journal)
         {
             _journalRepository.UpdateJournalAsync(journal);

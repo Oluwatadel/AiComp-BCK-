@@ -274,23 +274,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "NotificationController.cs",
-              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
-              "RelativeToolTip": "Controllers\\NotificationController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAowDoAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T13:54:08.498Z"
             },
             {
               "$type": "Document",
@@ -326,8 +314,7 @@
               "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\UserRepository.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T12:20:54.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T12:20:54.556Z"
             },
             {
               "$type": "Document",
@@ -339,8 +326,7 @@
               "RelativeToolTip": "Infrastructure\\Persistence\\Repositories\\ProfileRepository.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAIwBYAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T11:45:55.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T11:45:55.384Z"
             },
             {
               "$type": "Document",
@@ -352,8 +338,7 @@
               "RelativeToolTip": "Controllers\\JournalController.cs",
               "ViewState": "AgIAAG8AAAAAAAAAAAAAAIAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-16T14:58:03.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-16T14:58:03.034Z"
             },
             {
               "$type": "Document",
@@ -377,8 +362,7 @@
               "RelativeToolTip": "Controllers\\ProfileController.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAAAuwIkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:49:59.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T19:49:59.523Z"
             },
             {
               "$type": "Document",
@@ -386,12 +370,24 @@
               "Title": "AuthenticationController.cs",
               "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs*",
-              "RelativeToolTip": "Controllers\\AuthenticationController.cs*",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAIwEMAAABBAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-12T20:09:06.727Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NotificationController.cs",
+              "DocumentMoniker": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
+              "ToolTip": "C:\\Users\\oluwa\\Documents\\Programming\\Software Journey\\Projects\\Mental Companion\\AiComp-BCK-\\Controllers\\NotificationController.cs",
+              "RelativeToolTip": "Controllers\\NotificationController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowDoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-16T13:54:08.498Z"
             },
             {
               "$type": "Document",
@@ -415,8 +411,7 @@
               "RelativeToolTip": "Controllers\\ChatController.cs",
               "ViewState": "AgIAAHkAAAAAAAAAAAAowPsAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T19:33:28.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-12T19:33:28.11Z"
             },
             {
               "$type": "Document",

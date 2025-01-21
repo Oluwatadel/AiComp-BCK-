@@ -42,9 +42,9 @@ namespace AiComp.Infrastructure.Persistence.Repositories
             return journals;
         }
 
-        public bool JournalExist(string journalTitle)
+        public Task<bool> JournalExist(string journalTitle)
         {
-            return _dbContext.Journals.Any(a => a.Title == journalTitle);
+            return _dbContext.Journals.AnyAsync(a => a.Title == journalTitle);
         }
     }
 }
