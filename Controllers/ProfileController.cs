@@ -133,13 +133,22 @@ namespace AiComp.Controllers
         {
             var user = await _identityService.GetCurrentUser();
             var profile = await _profileService.GetProfile(user.Id);
-            if(profile == null)
+            if(profile.Data == null)
             {
                 return NotFound(new
                 {
                     status = "Not Found",
                     Message = "Profile Not found",
                     StatusCode = 401 
+                });
+            }
+
+            if(string.IsNullOrEmpty(profile.Data.FirstName) || string.IsNullOrEmpty(profile.Data.LastName))
+            {
+                return NotFound(new
+                {
+                    status = false,
+                    Message = "Some properties are missing",
                 });
             }
 

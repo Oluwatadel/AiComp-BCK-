@@ -34,7 +34,7 @@ namespace AiComp.Infrastructure.Persistence.Repositories
                 }
 
                 // Upload profile picture if provided
-                string? profilePicUrl = null;
+                string? profilePicUrl = "";
                 if (model.ProfilePicture != null)
                 {
                     var uploadResult = await _profilePicUpload.ProfilePicUpload(model.ProfilePicture);
@@ -100,19 +100,29 @@ namespace AiComp.Infrastructure.Persistence.Repositories
                     response.SetValues("Profile picture upload failed", false, null);
                     return response;
                 }
-                profile.UpdateProfilePicture(uploadResult.Data);
-                profile.UpdateProfile(model);
-                var returnedProfile = _profileRepository.UpdateProfileAsync(profile);
-                var changes = await _unitOfWork.SaveChanges();
-                var baseResponse = new BaseResponse<Profile>();
-                if (changes > 0)
+                if(profile != null)
                 {
-                    baseResponse.SetValues("Profile updated successfully", true, profile);
+                    profile.UpdateProfilePicture(uploadResult.Data);
+                    profile.UpdateProfile(model);
+                    var returnedProfile = _profileRepository.UpdateProfileAsync(profile);
+                    var changes = await _unitOfWork.SaveChanges();
+                    var baseResponse = new BaseResponse<Profile>();
+                    if (changes > 0)
+                    {
+                        baseResponse.SetValues("Profile updated successfully", true, profile);
+                        return baseResponse;
+                    }
+
+                    baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
                     return baseResponse;
                 }
-
-                baseResponse.SetValues("Something went wrong, Profile was not updated!!! Data was not persisted to the dataBase", false, null);
-                return baseResponse;
+                else
+                {
+                    var basResponse = new BaseResponse<Profile>();
+                    basResponse.SetValues("Profile not found", false, null);
+                    return basResponse;
+                }
+                
             }
             catch(Exception ex)
             {

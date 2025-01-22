@@ -29,14 +29,14 @@ namespace AiComp.Controllers
                 var user = await _userService.UserExist(request.Email);
                 if (user == true) return Conflict(new
                 {
-                    status = "Duplicate email",
+                    status = false,
                     message = "Duplicate Email",
                     statusCode = 409
                 });
                 var newUser = await _userService.AddUserAsync(request);
                 return Created("", new
                 {
-                    status = "success",
+                    status = false,
                     message = "Registration Successfull",
                     data = new
                     {
@@ -79,8 +79,7 @@ namespace AiComp.Controllers
                             user.Id,
                             user.Email,
                         },
-                    },
-                    profile = true
+                    }
                 });
             }
             catch (Exception ex)

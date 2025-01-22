@@ -122,7 +122,7 @@
   {
     "ContainingType": "AiComp.Controllers.JournalController",
     "Method": "AddJournal",
-    "RelativePath": "api/Journal",
+    "RelativePath": "api/Journal/add/journal",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -138,7 +138,7 @@
   {
     "ContainingType": "AiComp.Controllers.JournalController",
     "Method": "DeleteJournal",
-    "RelativePath": "api/Journal",
+    "RelativePath": "api/Journal/delete/journal",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -154,7 +154,7 @@
   {
     "ContainingType": "AiComp.Controllers.JournalController",
     "Method": "GetAllJournals",
-    "RelativePath": "api/Journal",
+    "RelativePath": "api/Journal/view/journals",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -46,7 +46,7 @@ namespace AiComp.Controllers
 
                 var journalExist = await _journalService.JournalExistWithTheTitleAsync(journal);
                 if (journalExist)
-                    return Conflict("There is a journal with the same title");
+                    return Conflict(new { message = "There is a journal with the same title" });
 
                 var SavedJournal = await _journalService.AddJournalAsync(currentUser.Id, journal);
                 if (!SavedJournal.Status && SavedJournal.Data == null)
@@ -71,12 +71,12 @@ namespace AiComp.Controllers
             }
         }
 
-        [HttpDelete("delete/journal/{journalId}")]
+        [HttpDelete("delete/journal/")]
         public async Task<IActionResult> DeleteJournal([FromQuery] Guid journalId)
         {
             try
             {
-                if (!ModelState.IsValid)
+                if (journalId == Guid.Empty)
                 {
                     return BadRequest();
                 }

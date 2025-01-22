@@ -8,7 +8,7 @@ namespace AiComp.Domain.Entities
         public string? Password { get; private set; }
         public bool IsConsented { get; set; } = default;        
         public Conversation? Conversation { get; set; }
-        public Profile? Profile { get; set; }
+        public Profile? Profile { get; set; } = default;
 
         public List<MoodLog> MoodLogs = new List<MoodLog>();
 

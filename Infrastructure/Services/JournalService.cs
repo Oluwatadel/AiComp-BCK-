@@ -23,7 +23,7 @@ namespace AiComp.Infrastructure.Services
         public async Task<BaseResponse<Journal>> AddJournalAsync(Guid userId, Journal journal)
         {
             var baseResponse = new BaseResponse<Journal>();
-            if(_journalRepository.JournalExist(journal.Title))
+            if(await _journalRepository.JournalExist(journal.Title))
             {
                 baseResponse.SetValues("Journal with the title already exist", false,null);
                 return baseResponse;

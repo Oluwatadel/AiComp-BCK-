@@ -208,7 +208,7 @@
         }
       }
     },
-    "/api/Journal": {
+    "/api/Journal/add/journal": {
       "post": {
         "tags": [
           "Journal"
@@ -237,7 +237,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Journal/delete/journal": {
       "delete": {
         "tags": [
           "Journal"
@@ -257,7 +259,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Journal/view/journals": {
       "get": {
         "tags": [
           "Journal"
@@ -735,15 +739,19 @@
   "components": {
     "schemas": {
       "JournalRequestModel": {
+        "required": [
+          "content",
+          "title"
+        ],
         "type": "object",
         "properties": {
           "title": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "content": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
